@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c542eb85c5afc479df90e6fc7faea6, type: 3}
+  m_Name: _GameSettings
+  m_EditorClassIdentifier: 
+  _prefabs:
+    PistolShotPrefab: {fileID: 7631708164722800484, guid: c8c380cd83a19c942ad5374d74896299, type: 3}
+    EnemyPrefab: {fileID: 6300990857189781359, guid: 0182022f160731a4bb1db84e4eca69bf, type: 3}

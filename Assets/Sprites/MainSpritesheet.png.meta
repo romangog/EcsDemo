@@ -1,0 +1,1011 @@
+fileFormatVersion: 2
+guid: cd20138c3d25c084da4d3c18b86b77c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2962274285517505976
+    second: Doodle
+  - first:
+      213: 3642895639730166632
+    second: DefaultPlatform
+  - first:
+      213: 2202548682660783183
+    second: WeakPlatform
+  - first:
+      213: -23278179230069286
+    second: WeakPlatofrmPart_6
+  - first:
+      213: 244142420968812104
+    second: WeakPlatofrmPart_5
+  - first:
+      213: -8412514572834569097
+    second: WeakPlatofrmPart_7
+  - first:
+      213: 4912935602268301503
+    second: WeakPlatofrmPart_4
+  - first:
+      213: -7856937210559000545
+    second: WeakPlatofrmPart_8
+  - first:
+      213: 3533210348745159635
+    second: WeakPlatofrmPart_3
+  - first:
+      213: 7009047352155469417
+    second: WeakPlatofrmPart_9
+  - first:
+      213: -4687062712678210921
+    second: WeakPlatofrmPart_2
+  - first:
+      213: -9208903337494026507
+    second: WeakPlatofrmPart_10
+  - first:
+      213: -869806318593493254
+    second: WeakPlatofrmPart_1
+  - first:
+      213: 9220185712161070121
+    second: WeakPlatofrmPart_11
+  - first:
+      213: 7165362317656098137
+    second: WeakPlatofrmPart_0
+  - first:
+      213: -743660659168677957
+    second: PlatformMask
+  - first:
+      213: -4354661749709651901
+    second: FinishPlatformPattern
+  - first:
+      213: 5721370851426047111
+    second: CheckpointFlag_0
+  - first:
+      213: 420809369429108924
+    second: CheckpointFlag_1
+  - first:
+      213: 7498546773331249786
+    second: CheckpointFlag_2
+  - first:
+      213: -5866300073982049482
+    second: MainSprite_RightLeg
+  - first:
+      213: -4371981566196874575
+    second: MainSprite_RightArm
+  - first:
+      213: -1721614106895654116
+    second: MainSprite_LeftArm
+  - first:
+      213: 1927544656186411968
+    second: MainSprite_Head
+  - first:
+      213: -3836271160332344365
+    second: MainSprite_Body
+  - first:
+      213: -4829120846345411339
+    second: MainSprite_LeftLeg
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DoodlePlayer
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a747c6b33e3e6d0800000000000000
+      internalID: -2962274285517505976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DefaultPlatform
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 997
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b9fef884a2e8230800000000000000
+      internalID: 3642895639730166632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatform
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 997
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4420867b56019e10800000000000000
+      internalID: 2202548682660783183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_6
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 997
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add49fb8e9c4daff0800000000000000
+      internalID: -23278179230069286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1001
+        width: 6
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e23740d3e536300800000000000000
+      internalID: 244142420968812104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 997
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7740662419eb04b80800000000000000
+      internalID: -8412514572834569097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_4
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1001
+        width: 7
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8629186e04e2440800000000000000
+      internalID: 4912935602268301503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 997
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10151e1c3d86f290800000000000000
+      internalID: -7856937210559000545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1001
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d370b9a71c780130800000000000000
+      internalID: 3533210348745159635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 997
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9667e176e63254160800000000000000
+      internalID: 7009047352155469417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1001
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79226d2cb4534feb0800000000000000
+      internalID: -4687062712678210921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_10
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 997
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f662c59437633080800000000000000
+      internalID: -9208903337494026507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1001
+        width: 4
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af638dcf2c3dde3f0800000000000000
+      internalID: -869806318593493254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 997
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c1e78fd0ea4ff70800000000000000
+      internalID: 9220185712161070121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeakPlatofrmPart_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1001
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9558cde601b707360800000000000000
+      internalID: 7165362317656098137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlatformMask
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 982
+        width: 32
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf61d0129cfda5f0800000000000000
+      internalID: -743660659168677957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinishPlatformPattern
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 966
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340439be5322193c0800000000000000
+      internalID: -4354661749709651901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CheckpointFlag_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1003
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784168be974666f40800000000000000
+      internalID: 5721370851426047111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CheckpointFlag_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1003
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb86af654e307d500800000000000000
+      internalID: 420809369429108924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CheckpointFlag_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1003
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a8f04bf80301860800000000000000
+      internalID: 7498546773331249786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSprite_RightLeg
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1008
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633c378e927b69ea0800000000000000
+      internalID: -5866300073982049482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSprite_RightArm
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1013
+        width: 3
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b28746ede99353c0800000000000000
+      internalID: -4371981566196874575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSprite_LeftArm
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1013
+        width: 3
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13ee2e57199b18e0800000000000000
+      internalID: -1721614106895654116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSprite_Head
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1019
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb81b8f6a300ca10800000000000000
+      internalID: 1927544656186411968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSprite_Body
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1013
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3a05284b3d2cac0800000000000000
+      internalID: -3836271160332344365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSprite_LeftLeg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1008
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4e5201d248bfcb0800000000000000
+      internalID: -4829120846345411339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856e21fc69a989b4b851ccabe5cda24d
+      internalID: -1451485401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bullet_pistol
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 982
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df06698b746afd04fb036af39b6f300a
+      internalID: 776874716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_RightLeg
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1008
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1db88921e3822343b46256055aff8d1
+      internalID: -708580035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_LeftLeg
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1008
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c6ffe821129df40a4429ed95b880e8
+      internalID: -309369723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_RightArm
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1017
+        width: 3
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8f52303c25af64eae4eb05fd881e36
+      internalID: 1372631616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_LeftArm
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1017
+        width: 3
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0b2df79ec901b4886ae43440202611
+      internalID: -115054959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonser_Head
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1019
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5a0f7cd6160f14c8266b7c7d56cc35
+      internalID: -202706438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_LeftBody
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1014
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37f26be547cbc543862c0e32ffc62a8
+      internalID: -399529012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_RightBody
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1014
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9afbcde7736d0046994861ff050c198
+      internalID: 963505696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 56e493a821581704a91efcf106e5aa57
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DoodleMonster_LeftBody: -399529012
+      DefaultPlatform: 3642895639730166632
+      WeakPlatofrmPart_0: 7165362317656098137
+      WeakPlatofrmPart_7: -8412514572834569097
+      WeakPlatofrmPart_8: -7856937210559000545
+      MainSpritesheet_5: 805075276
+      WeakPlatofrmPart_10: -9208903337494026507
+      MainSprite_LeftArm: -1721614106895654116
+      MainSprite_Body: -3836271160332344365
+      MainSpritesheet_6: 883138623
+      DoodleMonster_RightArm: 1372631616
+      WeakPlatofrmPart_3: 3533210348745159635
+      FinishPlatformPattern: -4354661749709651901
+      CheckpointFlag_1: 420809369429108924
+      DoodleMonster_LeftArm: -115054959
+      MainSpritesheet_4: -115054959
+      DoodleMonster_RightLeg: -708580035
+      DoodlePlayer: -2962274285517505976
+      CheckpointFlag_2: 7498546773331249786
+      MainSprite_Head: 1927544656186411968
+      Bullet_pistol: 776874716
+      WeakPlatofrmPart_2: -4687062712678210921
+      WeakPlatofrmPart_11: 9220185712161070121
+      WeakPlatofrmPart_6: -23278179230069286
+      MainSpritesheet_7: -1107889472
+      PlatformMask: -743660659168677957
+      MainSprite_LeftLeg: -4829120846345411339
+      WeakPlatform: 2202548682660783183
+      MainSprite_RightLeg: -5866300073982049482
+      WeakPlatofrmPart_9: 7009047352155469417
+      WeakPlatofrmPart_4: 4912935602268301503
+      DoodleMonster: -1451485401
+      WeakPlatofrmPart_1: -869806318593493254
+      CheckpointFlag_0: 5721370851426047111
+      MainSprite_RightArm: -4371981566196874575
+      DoodleMonster_RightBody: 963505696
+      DoodleMonser_Head: -202706438
+      DoodleMonster_LeftLeg: -309369723
+      WeakPlatofrmPart_5: 244142420968812104
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
