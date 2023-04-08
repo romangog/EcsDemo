@@ -8,7 +8,7 @@ public class PistolFireSystem : IEcsRunSystem
     private EcsWorld _world = null;
 
     EcsFilter<PistolWeaponComponent, PistolFiringStatusComponent> _pistolFiringFilter;
-    EcsFilter<EnemyTag, RigidbodyComponent> _enemiesRigidbodies;
+    EcsFilter<EnemyTag, RigidbodyComponent>.Exclude<DeadTag> _enemiesRigidbodies;
     EcsFilter<PlayerTag, RigidbodyComponent> _playerRigidbody;
 
     private readonly GameObject _pistolShotPrefab;
@@ -53,20 +53,25 @@ public class PistolFireSystem : IEcsRunSystem
                 Projectile pistolShot = GameObject.Instantiate(_prefabs.PistolShotPrefab);
                 pistolShot.transform.position = playerPos;
                 pistolShot.transform.rotation = Quaternion.LookRotation(Vector3.forward, closestPos - playerPos);
-                pistolShot.ProjectileHitbox.HitEnityRecievedEvent += (hitEntityRef)=> OnHitEntityRecieved(hitEntityRef,ref entity);
+                pistolShot.ProjectileHitbox.HitEnityRecievedEvent += (hitEntityRef) => OnHitEntityRecieved(hitEntityRef, ref entity);
 
                 entity.Get<RigidbodyComponent>().Rigidbody = pistolShot.Rigidbody;
-                entity.Get<MoveForwardComponent>().Direction = (closestPos - playerPos).normalized;
-                entity.Get<MoveForwardComponent>().Speed = 10f;
-                entity.Get<PistolProjectileHitComponent>().Damage = pistolWeapon.Damage;
+
+                ref var pistolShotMoveForward = ref entity.Get<MoveForwardComponent>();
+                pistolShotMoveForward.Direction = (closestPos - playerPos).normalized;
+                pistolShotMoveForward.Speed = 20f;
+
+                ref var pistolShotProjectileHit = ref entity.Get<PistolProjectileHitComponent>();
+                pistolShotProjectileHit.Damage = pistolWeapon.Damage;
+                pistolShotProjectileHit.PushForce = pistolWeapon.PushForce;
             }
         }
     }
 
-    private void OnHitEntityRecieved(EntityReference hitEntityRef,ref EcsEntity pistolShotEntity)
+    private void OnHitEntityRecieved(EntityReference hitEntityRef, ref EcsEntity pistolShotEntity)
     {
-        Debug.Log("Hit enemy " + hitEntityRef.name);
         hitEntityRef.Entity.Get<AccumulativeDamageComponent>().Damage += pistolShotEntity.Get<PistolProjectileHitComponent>().Damage;
+        hitEntityRef.Entity.Get<HitImpactRequest>().PushForce += pistolShotEntity.Get<PistolProjectileHitComponent>().PushForce * pistolShotEntity.Get<MoveForwardComponent>().Direction;
         pistolShotEntity.Get<PistolShotDestroyTag>();
     }
 }

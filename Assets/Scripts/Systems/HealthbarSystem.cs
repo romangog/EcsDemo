@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Leopotam.Ecs;
+using UnityEngine;
 
 public class HealthbarSystem : IEcsRunSystem
 {

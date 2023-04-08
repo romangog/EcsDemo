@@ -8,12 +8,12 @@ public struct EntityReferenceComponent
     public EcsEntity RootEntity;
 }
 
-public class InitializeEntityReferencesSystem : IEcsRunSystem, IEcsInitSystem
+public class InitializeEntityReferencesSystem : IEcsRunSystem
 {
     private EcsFilter<EntityRootRequest> _entityinitializeRequestFilter;
     private EcsFilter<EntityChildRequest> _entityChildRequest;
 
-    public void Init()
+    public void Run()
     {
         foreach (var id in _entityinitializeRequestFilter)
         {
@@ -21,6 +21,7 @@ public class InitializeEntityReferencesSystem : IEcsRunSystem, IEcsInitSystem
             ref var root = ref _entityinitializeRequestFilter.Get1(id);
 
             root.EntityReference.Entity = entity;
+            entity.Del<EntityRootRequest>();
         }
 
         foreach (var id in _entityChildRequest)
@@ -29,11 +30,7 @@ public class InitializeEntityReferencesSystem : IEcsRunSystem, IEcsInitSystem
             ref var child = ref _entityChildRequest.Get1(id);
 
             entity.Get<EntityReferenceComponent>().RootEntity = child.EntityReference.Entity;
+            entity.Del<EntityChildRequest>();
         }
-    }
-
-    public void Run()
-    {
-        
     }
 }

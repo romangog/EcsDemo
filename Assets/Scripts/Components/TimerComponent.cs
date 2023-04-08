@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComponentType : MonoBehaviour
+public struct TimerComponent
 {
-    public Type Type;
+    public float Timer;
 }

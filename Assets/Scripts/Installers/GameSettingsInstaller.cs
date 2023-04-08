@@ -5,9 +5,11 @@ using Zenject;
 public class GameSettingsInstaller : ScriptableObjectInstaller<GameSettingsInstaller>
 {
     [SerializeField] private Prefabs _prefabs;
+    [SerializeField] private GameSettings _gameSettings;
 
     public override void InstallBindings()
     {
         Container.BindInstance(_prefabs);
+        Container.BindInstance(_gameSettings);
     }
 }

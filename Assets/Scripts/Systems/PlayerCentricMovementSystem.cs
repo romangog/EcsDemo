@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Leopotam.Ecs;
 
 public class PlayerCentricMovementSystem : IEcsRunSystem
 {
     EcsWorld _world;
-    EcsFilter<EnemyTag, RigidbodyComponent> _enemyRigidbodyesFilter;
+    EcsFilter<EnemyTag, RigidbodyComponent>.Exclude<DeadTag, HitThrowbackTimer> _enemyRigidbodyesFilter;
     EcsFilter<PlayerTag, RigidbodyComponent> _playerPositionFilter;
 
     public void Run()
@@ -26,3 +24,4 @@ public class PlayerCentricMovementSystem : IEcsRunSystem
         }
     }
 }
+

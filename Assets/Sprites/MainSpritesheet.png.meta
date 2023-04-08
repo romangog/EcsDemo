@@ -765,11 +765,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoodleMonster
+      name: DoodleMonster_idle0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 1008
+        x: 2
+        y: 944
         width: 12
         height: 16
       alignment: 0
@@ -807,34 +807,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoodleMonster_RightLeg
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 1008
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1db88921e3822343b46256055aff8d1
-      internalID: -708580035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoodleMonster_LeftLeg
+      name: DoodleMonster_die0
       rect:
         serializedVersion: 2
         x: 18
-        y: 1008
-        width: 6
-        height: 6
+        y: 944
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -842,20 +821,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64c6ffe821129df40a4429ed95b880e8
-      internalID: -309369723
+      spriteID: eb9e1b90d8773d747a0122daba915de6
+      internalID: 571907011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoodleMonster_RightArm
+      name: DoodleMonster_die1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1017
-        width: 3
-        height: 7
+        x: 34
+        y: 944
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -863,20 +842,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f8f52303c25af64eae4eb05fd881e36
-      internalID: 1372631616
+      spriteID: 156c1c09243aa7a4d8320f054eae0397
+      internalID: 667091234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoodleMonster_LeftArm
+      name: DoodleMonster_die2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 1017
-        width: 3
-        height: 7
+        x: 50
+        y: 944
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -884,20 +863,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb0b2df79ec901b4886ae43440202611
-      internalID: -115054959
+      spriteID: a3b6651bedfeced4d92f3075b2dfe87e
+      internalID: -873980026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DoodleMonser_Head
+      name: DoodleMonster_die3
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1019
-        width: 8
-        height: 5
+        x: 66
+        y: 944
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8210b949f963494a8a4b6b15f203545
+      internalID: 928704640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodleMonster_idle1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 928
+        width: 12
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -905,50 +905,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf5a0f7cd6160f14c8266b7c7d56cc35
-      internalID: -202706438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoodleMonster_LeftBody
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 1014
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c37f26be547cbc543862c0e32ffc62a8
-      internalID: -399529012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DoodleMonster_RightBody
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 1014
-        width: 4
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9afbcde7736d0046994861ff050c198
-      internalID: 963505696
+      spriteID: 8277c5c600d8eab4c922e38901438c8c
+      internalID: 499482740
       vertices: []
       indices: 
       edges: []
@@ -965,44 +923,49 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       DoodleMonster_LeftBody: -399529012
-      DefaultPlatform: 3642895639730166632
       WeakPlatofrmPart_0: 7165362317656098137
+      MainSpritesheet_5: 805075276
+      DoodleMonster_idle0: -1451485401
+      MainSprite_LeftArm: -1721614106895654116
+      FinishPlatformPattern: -4354661749709651901
+      DoodleMonster_RightLeg: -708580035
+      DoodleMonster_die2: -873980026
+      MainSprite_Head: 1927544656186411968
+      WeakPlatofrmPart_11: 9220185712161070121
+      PlatformMask: -743660659168677957
+      DoodleMonster_die1: 667091234
+      MainSprite_LeftLeg: -4829120846345411339
+      WeakPlatform: 2202548682660783183
+      WeakPlatofrmPart_1: -869806318593493254
+      WeakPlatofrmPart_4: 4912935602268301503
+      CheckpointFlag_0: 5721370851426047111
+      MainSprite_RightArm: -4371981566196874575
+      DoodleMonster_RightBody: 963505696
+      WeakPlatofrmPart_5: 244142420968812104
+      DefaultPlatform: 3642895639730166632
       WeakPlatofrmPart_7: -8412514572834569097
       WeakPlatofrmPart_8: -7856937210559000545
-      MainSpritesheet_5: 805075276
       WeakPlatofrmPart_10: -9208903337494026507
-      MainSprite_LeftArm: -1721614106895654116
       MainSprite_Body: -3836271160332344365
       MainSpritesheet_6: 883138623
       DoodleMonster_RightArm: 1372631616
       WeakPlatofrmPart_3: 3533210348745159635
-      FinishPlatformPattern: -4354661749709651901
       CheckpointFlag_1: 420809369429108924
       DoodleMonster_LeftArm: -115054959
       MainSpritesheet_4: -115054959
-      DoodleMonster_RightLeg: -708580035
       DoodlePlayer: -2962274285517505976
       CheckpointFlag_2: 7498546773331249786
-      MainSprite_Head: 1927544656186411968
+      DoodleMonster_die0: 571907011
       Bullet_pistol: 776874716
       WeakPlatofrmPart_2: -4687062712678210921
-      WeakPlatofrmPart_11: 9220185712161070121
+      DoodleMonster_idle1: 499482740
       WeakPlatofrmPart_6: -23278179230069286
       MainSpritesheet_7: -1107889472
-      PlatformMask: -743660659168677957
-      MainSprite_LeftLeg: -4829120846345411339
-      WeakPlatform: 2202548682660783183
-      MainSprite_RightLeg: -5866300073982049482
+      DoodleMonster_die3: 928704640
       WeakPlatofrmPart_9: 7009047352155469417
-      WeakPlatofrmPart_4: 4912935602268301503
-      DoodleMonster: -1451485401
-      WeakPlatofrmPart_1: -869806318593493254
-      CheckpointFlag_0: 5721370851426047111
-      MainSprite_RightArm: -4371981566196874575
-      DoodleMonster_RightBody: 963505696
+      MainSprite_RightLeg: -5866300073982049482
       DoodleMonser_Head: -202706438
       DoodleMonster_LeftLeg: -309369723
-      WeakPlatofrmPart_5: 244142420968812104
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
