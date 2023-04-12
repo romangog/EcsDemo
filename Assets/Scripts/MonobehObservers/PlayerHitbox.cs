@@ -9,7 +9,8 @@ public class PlayerHitbox : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.collider.TryGetComponent(out EnemyHitbox enemyHitbox))
+        if (!enabled) return;
+        if (collision.collider.TryGetComponent(out EnemyHitbox enemyHitbox))
         {
             enemyHitbox.PassHitPlayerEntity(_entityReference);
         }

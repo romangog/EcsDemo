@@ -7,12 +7,9 @@ using System;
 public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
 {
     private Prefabs _prefabs;
-    private GameSettings _gameSettings;
 
     private float _spawnTimer;
     private float _spawnTimerMax;
-    private float _gameTimer;
-    private int _enemiesCount;
 
     private EcsFilter<PlayerTag, TransformComponent> _playerTransformFilter;
     private EcsFilter<MainCameraTag, CameraComponent> _mainCameraFilter;
@@ -29,7 +26,7 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
 
         if (_spawnTimer == 0f)
         {
-            if (_aliveEnemiesFilter.GetEntitiesCount() >= 10)
+            if (_aliveEnemiesFilter.GetEntitiesCount() >= 100)
             {
                 return;
             }
@@ -38,7 +35,7 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
             ref var mainCamera = ref _mainCameraFilter.Get2(0);
 
 
-            _spawnTimerMax = Mathf.Max(0.5f, _spawnTimerMax * 0.975f);
+            _spawnTimerMax = Mathf.Max(0.1f, _spawnTimerMax * 0.975f);
             _spawnTimer = _spawnTimerMax;
 
             Vector2 spawnPosition;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct PistolProjectileHitComponent
+public struct ProjectileInfoComponent
 {
     public float Damage;
     public float PushForce;

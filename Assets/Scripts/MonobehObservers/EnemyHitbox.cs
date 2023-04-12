@@ -10,6 +10,7 @@ public class EnemyHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!enabled) return;
         if(other.TryGetComponent(out ProjectileHitbox hitbox))
         {
             hitbox.PassHitEntity(_entityReference); 
