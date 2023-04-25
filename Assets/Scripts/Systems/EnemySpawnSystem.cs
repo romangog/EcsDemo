@@ -7,6 +7,8 @@ using System;
 public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
 {
     private Prefabs _prefabs;
+    private WeaponUpgradeLevels _weaponUpgrades;
+    private LevelData _levelData;
 
     private float _spawnTimer;
     private float _spawnTimerMax;
@@ -35,7 +37,8 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
             ref var mainCamera = ref _mainCameraFilter.Get2(0);
 
 
-            _spawnTimerMax = Mathf.Max(0.1f, _spawnTimerMax * 0.975f);
+            _spawnTimerMax = Mathf.Lerp(5f, 0.1f, _levelData.EnemyLevel / 30f);
+            //_spawnTimerMax = Mathf.Max(0.1f, _spawnTimerMax * 0.975f);
             _spawnTimer = _spawnTimerMax;
 
             Vector2 spawnPosition;

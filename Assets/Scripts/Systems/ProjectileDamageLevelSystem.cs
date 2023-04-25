@@ -12,7 +12,13 @@ public class ProjectileDamageLevelSystem : IEcsRunSystem
         {
             ref var entity = ref _projectileShotFilter.GetEntity(i);
 
-            entity.Get<ProjectileDamageComponent>().Damage = _weaponUpgradeLevels.GetProjectileDamageFromLevel();
+            ref var damage = ref entity.Get<ProjectileDamageComponent>();
+            damage.Damage = _weaponUpgradeLevels.GetProjectileDamageFromLevel();
+
+            if (entity.Has<ProjectileFragmentTag>())
+            {
+                damage.Damage *= 0.5f;
+            }
         }
     }
 }

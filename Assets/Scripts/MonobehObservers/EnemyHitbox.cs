@@ -11,9 +11,9 @@ public class EnemyHitbox : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!enabled) return;
-        if(other.TryGetComponent(out ProjectileHitbox hitbox))
+        if (other.TryGetComponent(out ProjectileHitbox hitbox))
         {
-            hitbox.PassHitEntity(_entityReference); 
+            hitbox.PassHitEntity(_entityReference);
         }
     }
 
@@ -22,7 +22,7 @@ public class EnemyHitbox : MonoBehaviour
         // надо передать в систему ивент о том, что враг задел игрока
         // Для этого нужен еще и урон врага
         // Урон врага привязан к его Entity
-
+        if (!entityReference.Entity.IsAlive() || !_entityReference.Entity.IsAlive()) return;
         entityReference.Entity.Get<AccumulativeDamageComponent>().Damage += _entityReference.Entity.Get<DamageComponent>().Damage;
     }
 }

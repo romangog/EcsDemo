@@ -899,7 +899,7 @@ TextureImporter:
         width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -907,6 +907,111 @@ TextureImporter:
       bones: []
       spriteID: 8277c5c600d8eab4c922e38901438c8c
       internalID: 499482740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 880
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5440e595966d94ba88c3ff823d5567
+      internalID: 1329202390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 880
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced365b0364f569459e4647c50a29594
+      internalID: 2079036747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 880
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf4000bf11873449ae3244fbacb61d9
+      internalID: 1724237158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 880
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43308649e964537428d19aa9abb919b4
+      internalID: 542172938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9980fa202c9d1054681a319b3eaab272
+      internalID: 1041471578
       vertices: []
       indices: 
       edges: []
@@ -929,8 +1034,10 @@ TextureImporter:
       MainSprite_LeftArm: -1721614106895654116
       FinishPlatformPattern: -4354661749709651901
       DoodleMonster_RightLeg: -708580035
+      Explosion_4: 1329202390
       DoodleMonster_die2: -873980026
       MainSprite_Head: 1927544656186411968
+      Explosion_2: 1724237158
       WeakPlatofrmPart_11: 9220185712161070121
       PlatformMask: -743660659168677957
       DoodleMonster_die1: 667091234
@@ -941,6 +1048,7 @@ TextureImporter:
       CheckpointFlag_0: 5721370851426047111
       MainSprite_RightArm: -4371981566196874575
       DoodleMonster_RightBody: 963505696
+      Explosion_3: 2079036747
       WeakPlatofrmPart_5: 244142420968812104
       DefaultPlatform: 3642895639730166632
       WeakPlatofrmPart_7: -8412514572834569097
@@ -953,6 +1061,8 @@ TextureImporter:
       CheckpointFlag_1: 420809369429108924
       DoodleMonster_LeftArm: -115054959
       MainSpritesheet_4: -115054959
+      Explosion_1: 542172938
+      DoodleMonster_die3: 928704640
       DoodlePlayer: -2962274285517505976
       CheckpointFlag_2: 7498546773331249786
       DoodleMonster_die0: 571907011
@@ -961,7 +1071,7 @@ TextureImporter:
       DoodleMonster_idle1: 499482740
       WeakPlatofrmPart_6: -23278179230069286
       MainSpritesheet_7: -1107889472
-      DoodleMonster_die3: 928704640
+      Explosion_0: 1041471578
       WeakPlatofrmPart_9: 7009047352155469417
       MainSprite_RightLeg: -5866300073982049482
       DoodleMonser_Head: -202706438

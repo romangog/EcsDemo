@@ -15,6 +15,8 @@ MonoBehaviour:
   _prefabs:
     PistolShotPrefab: {fileID: 7631708164722800484, guid: c8c380cd83a19c942ad5374d74896299, type: 3}
     EnemyPrefab: {fileID: 6300990857189781359, guid: 0182022f160731a4bb1db84e4eca69bf, type: 3}
+    ExplosionPrefab: {fileID: 6619909098883992376, guid: 48b497459ec068446a92e6f9db7a8f02, type: 3}
   _gameSettings:
     SpawnRectSize: {x: 12, y: 24}
-    BulletsPathLengthMax: 50
+    BulletsPathLengthMax: 40
+    FragmentsPathLengthMax: 20

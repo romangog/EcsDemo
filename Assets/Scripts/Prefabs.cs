@@ -6,5 +6,6 @@ public class Prefabs
 {
     public Projectile PistolShotPrefab;
     public GameObject EnemyPrefab;
+    public GameObject ExplosionPrefab;
 }
 

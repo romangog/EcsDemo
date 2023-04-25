@@ -13,9 +13,7 @@ public class MoveInOneDirectionSystem : IEcsRunSystem
         {
             ref var rigidbody = ref _moveForwardFilter.Get1(id);
             ref var moveForward = ref _moveForwardFilter.Get2(id);
-            rigidbody.Rigidbody.MovePosition(rigidbody.Rigidbody.position + moveForward.Direction * moveForward.Speed * Time.deltaTime);
-            Debug.Log("MoveForward dir: " + moveForward.Direction);
-            Debug.Log("MoveForward speed: " + moveForward.Speed);
+            rigidbody.Rigidbody.MovePosition(rigidbody.Rigidbody.position + moveForward.Direction * moveForward.Speed * Time.fixedDeltaTime);
         }
     }
 }

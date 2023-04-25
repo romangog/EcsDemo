@@ -47,7 +47,7 @@ public class WeaponFireControlSystem : IEcsRunSystem
                 pistolFiringStatus.CurrentReload = _upgradeLevels.GetShootFrequencyFromLevel();
 
                 spawnBulletRequest.Get<SpawnBulletsRequest>().BulletSpawnPos = playerPos;
-                spawnBulletRequest.Get<SpawnBulletsRequest>().DirectionToClosestTarget = (closestPos - playerPos).normalized;
+                spawnBulletRequest.Get<SpawnBulletsRequest>().BulletSpawnDirection = (closestPos - playerPos).normalized;
 
             }
         }

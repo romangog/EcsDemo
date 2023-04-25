@@ -18,7 +18,7 @@ public class EnemyDeadDisableSystem : IEcsRunSystem
 
             if(timer.Timer == 0f)
             {
-                GameObject.Destroy(entity.Get<GameObjectComponent>().GameObject);
+                GameObject.Destroy(entity.Get<GameObjectComponent>().GameObject, 0.1f);
                 entity.Destroy();
             }
         }    

@@ -14,8 +14,14 @@ public class ProjectileSpeedLevelSystem : IEcsRunSystem
             ref var entity = ref _shotProjectilesFilter.GetEntity(id);
             ref var moveForward = ref _shotProjectilesFilter.Get2(id);
             moveForward.Speed = _weaponUpgradeLevels.GetProjectileSpeedFromLevel();
-            Debug.Log("SetSpeed " + moveForward.Speed);
+
+            if (entity.Has<ProjectileFragmentTag>())
+            {
+                moveForward.Speed *= 0.75f;
+            }
+
         }
     }
 }
+
 

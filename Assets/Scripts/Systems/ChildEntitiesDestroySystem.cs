@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ChildEntitiesDestroySystem : IEcsRunSystem
 {
-    private EcsFilter<EntityReferenceComponent> _rootEntities;
+    private EcsFilter<EntityReferenceComponent> _childEntities;
 
     public void Run()
     {
-        foreach (var i in _rootEntities)
+        foreach (var i in _childEntities)
         {
-            ref var entity = ref _rootEntities.GetEntity(i);
-            ref var rootEntity = ref _rootEntities.Get1(i);
+            ref var entity = ref _childEntities.GetEntity(i);
+            ref var rootEntity = ref _childEntities.Get1(i);
 
             if (!rootEntity.RootEntity.IsAlive())
             {
