@@ -13,6 +13,7 @@ public class WeaponUpgradeLevels
     public int PenetrationLevel = 0;
     public int SpreadLevel = 0;
     public int ExplosionLevel = 0;
+    public int PuddleLevel = 0;
     public int IceLevel = 0;
     public int FireLevel = 0;
 
@@ -75,12 +76,27 @@ public class WeaponUpgradeLevels
 
     internal float GetProjectileAutoAimViewAngleFromLevel()
     {
-        return Mathf.Lerp(0, 90f, AutoAimLevel / 3f);
+        return Mathf.LerpUnclamped(0, 90f, AutoAimLevel / 3f);
     }
 
     internal float GetProjectileAutoAimRotateSpeedFromLevel()
     {
-        return Mathf.Lerp(0, 180f, AutoAimLevel / 3f);
+        return Mathf.LerpUnclamped(0, 180f, AutoAimLevel / 3f);
+    }
+
+    internal float GetFireDamagePerSecFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 100f, FireLevel / 4f);
+    }
+
+    internal float GetFireTimerFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 8f, FireLevel / 4f);
+    }
+
+    internal float GetFireCatchRadiusFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 2f, FireLevel / 4f);
     }
 
     internal float GetProjectileExplosionRangeFromLevel()
@@ -98,6 +114,20 @@ public class WeaponUpgradeLevels
         return (ExplosionLevel + DamageLevel) * 20f;
     }
 
+    internal float GetPuddleEfficiencyFromLevel()
+    {
+        return Mathf.LerpUnclamped(1f, 0.25f, PuddleLevel / 3f);
+    }
+
+    internal float GetPuddleLifeTimeFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 10f, PuddleLevel / 3f);
+    }
+
+    internal float GetPuddleRadiusFromLevel()
+    {
+        return Mathf.LerpUnclamped(0.5f, 1.5f, ProjectileSizeLevel / 3f);    
+    }
 
     internal int GetLevelsSum()
     {
@@ -114,5 +144,6 @@ public class WeaponUpgradeLevels
             + IceLevel
             + FireLevel;
     }
+
 }
 

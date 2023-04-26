@@ -45,15 +45,19 @@ public class EcsStartup : MonoBehaviour
 
         _fixedSystems = new EcsSystems(_world)
             .Add(new MoveInOneDirectionSystem())
+            .Add(new PuddleEffectSystem())
             .Add(new PlayerCentricMovementSystem());
 
         _updateSystems = new EcsSystems(_world)
             .Add(new InitializeEntityReferencesSystem())
             .Add(new EnemyHitRegistrationSystem())
             .Add(new FragmentationSpawnSystem())
+            .Add(new FragmentationFinalDeathSystem())
             .Add(new EnemyThrowbackSystem())
             .Add(new PlayerInputMovementSystem())
             .Add(new WeaponFireControlSystem())
+            .Add(new FireClosestEnemiesSystem())
+            .Add(new EnemyOnFireSystem())
 
             .Add(new BulletSpawnSystem())
 
@@ -81,9 +85,11 @@ public class EcsStartup : MonoBehaviour
             .Add(new EnemyDeadDisableSystem())
             .Add(new EnemySpawnSystem())
             .Add(new ProjectileLifeEndSystem())
+            .Add(new PuddleLifeEndSystem())
 
             // Projectile OnDeath Upgrade Adjustment
             .Add(new ProjectileExplosionLevelSystem())
+            .Add(new ProjectilePuddleSpawnLevelSystem())
 
             .Add(new ProjectilesDeathSystem())
             .OneFrame<DeathRequest>()
@@ -178,6 +184,16 @@ public class EcsStartup : MonoBehaviour
             if (GUI.Button(new Rect(pos, size), "Explosion " + _weaponUpgradeLevels.ExplosionLevel.ToString()))
             {
                 _weaponUpgradeLevels.ExplosionLevel++;
+            }
+            pos += Vector2.up * 20;
+            if (GUI.Button(new Rect(pos, size), "Puddle " + _weaponUpgradeLevels.PuddleLevel.ToString()))
+            {
+                _weaponUpgradeLevels.PuddleLevel++;
+            }
+            pos += Vector2.up * 20;
+            if (GUI.Button(new Rect(pos, size), "Fire " + _weaponUpgradeLevels.FireLevel.ToString()))
+            {
+                _weaponUpgradeLevels.FireLevel++;
             }
             pos += Vector2.up * 20;
         }

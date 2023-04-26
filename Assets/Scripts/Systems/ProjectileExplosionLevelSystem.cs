@@ -21,8 +21,8 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
             ref var projectileTransform = ref _projectileFilter.Get3(i);
 
             bool isFragment = projectileEntity.Has<ProjectileFragmentTag>();
-            float particlularExplosionRange = (isFragment) ? explosionRange : explosionRange * 0.5f;
-            float particlularExplosionDamage = (isFragment) ? explosionDamage : explosionDamage * 0.5f;
+            float particlularExplosionRange = (isFragment) ? explosionRange * 0.5f : explosionRange ;
+            float particlularExplosionDamage = (isFragment) ? explosionDamage * 0.5f : explosionDamage ;
             foreach (var j in _enemiesFilter)
             {
                 ref var enemyEntity = ref _enemiesFilter.GetEntity(j);
@@ -35,8 +35,8 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
                     accumulativeDamage.Damage += particlularExplosionDamage;
                 }
             }
-            // Spawn explosion fx
 
+            // Spawn explosion fx
             GameObject explosionFx = GameObject.Instantiate(
                 _prefabs.ExplosionPrefab,
                 projectileTransform.Transform.position,
@@ -46,3 +46,5 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
         }
     }
 }
+
+

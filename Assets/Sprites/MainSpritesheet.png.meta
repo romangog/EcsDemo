@@ -941,7 +941,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -962,7 +962,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -983,7 +983,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1004,7 +1004,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1012,6 +1012,279 @@ TextureImporter:
       bones: []
       spriteID: 9980fa202c9d1054681a319b3eaab272
       internalID: 1041471578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a9cb6aa9c3ec840b1981c9099232d9
+      internalID: 358365338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697d4f882107b6c418799ed2d628f842
+      internalID: 778189844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adee50c7dfb328478383e14d43d4b1a
+      internalID: 1702279932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e11a57218ec8f844add043775a00289
+      internalID: -1101403851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce06f2c65fdb18e468150fd4fc92880a
+      internalID: -1812199528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4544a717bb2816d4992b86be0c446b89
+      internalID: -198351070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_spawn0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4760d2901affe2940b62044cb3bdf739
+      internalID: 1124025926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_idle0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4428a47f989b59246a4af991012fb04e
+      internalID: 976462691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_idle1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8118fef784c2b40ad995121c1bf5c9
+      internalID: -250768528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_idle2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6037fa42d14a7074eac2ecd58594e1fb
+      internalID: -1856841827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_idle3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12723c9a8fb2804aafbd0538530bc14
+      internalID: 599065345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_idle4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f927bdbc703643b46a19ef9aa44907c8
+      internalID: 1349605872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle_idle5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 848
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a07c3385f9c7a047bb5bf189e26471e
+      internalID: 719023472
       vertices: []
       indices: 
       edges: []
@@ -1032,6 +1305,8 @@ TextureImporter:
       MainSpritesheet_5: 805075276
       DoodleMonster_idle0: -1451485401
       MainSprite_LeftArm: -1721614106895654116
+      Puddle_idle0: 976462691
+      Puddle_spawn2: -1812199528
       FinishPlatformPattern: -4354661749709651901
       DoodleMonster_RightLeg: -708580035
       Explosion_4: 1329202390
@@ -1042,40 +1317,51 @@ TextureImporter:
       PlatformMask: -743660659168677957
       DoodleMonster_die1: 667091234
       MainSprite_LeftLeg: -4829120846345411339
+      Puddle_idle1: -250768528
+      Puddle_idle4: 1349605872
       WeakPlatform: 2202548682660783183
       WeakPlatofrmPart_1: -869806318593493254
       WeakPlatofrmPart_4: 4912935602268301503
+      Puddle_spawn5: 778189844
       CheckpointFlag_0: 5721370851426047111
-      MainSprite_RightArm: -4371981566196874575
       DoodleMonster_RightBody: 963505696
+      MainSprite_RightArm: -4371981566196874575
       Explosion_3: 2079036747
       WeakPlatofrmPart_5: 244142420968812104
       DefaultPlatform: 3642895639730166632
+      Puddle_idle5: 719023472
       WeakPlatofrmPart_7: -8412514572834569097
       WeakPlatofrmPart_8: -7856937210559000545
-      WeakPlatofrmPart_10: -9208903337494026507
+      Puddle_idle3: 599065345
       MainSprite_Body: -3836271160332344365
+      WeakPlatofrmPart_10: -9208903337494026507
       MainSpritesheet_6: 883138623
       DoodleMonster_RightArm: 1372631616
+      Puddle_spawn0: 1124025926
       WeakPlatofrmPart_3: 3533210348745159635
       CheckpointFlag_1: 420809369429108924
       DoodleMonster_LeftArm: -115054959
       MainSpritesheet_4: -115054959
+      Puddle_spawn4: 1702279932
       Explosion_1: 542172938
       DoodleMonster_die3: 928704640
       DoodlePlayer: -2962274285517505976
       CheckpointFlag_2: 7498546773331249786
       DoodleMonster_die0: 571907011
       Bullet_pistol: 776874716
+      Puddle_idle2: -1856841827
       WeakPlatofrmPart_2: -4687062712678210921
+      Puddle_spawn1: -198351070
       DoodleMonster_idle1: 499482740
       WeakPlatofrmPart_6: -23278179230069286
       MainSpritesheet_7: -1107889472
       Explosion_0: 1041471578
       WeakPlatofrmPart_9: 7009047352155469417
       MainSprite_RightLeg: -5866300073982049482
+      Puddle_spawn6: 358365338
       DoodleMonser_Head: -202706438
       DoodleMonster_LeftLeg: -309369723
+      Puddle_spawn3: -1101403851
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
