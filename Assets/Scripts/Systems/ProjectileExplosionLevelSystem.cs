@@ -9,6 +9,7 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
 
     private WeaponUpgradeLevels _weaponUpgrades = null;
     private Prefabs _prefabs;
+    private EcsWorld _world;
 
     public void Run()
     {
@@ -17,12 +18,20 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
         float explosionDamage = _weaponUpgrades.GetProjectileExplosionDamageFromLevel();
         foreach (var i in _projectileFilter)
         {
+
             ref var projectileEntity = ref _projectileFilter.GetEntity(i);
             ref var projectileTransform = ref _projectileFilter.Get3(i);
 
             bool isFragment = projectileEntity.Has<ProjectileFragmentTag>();
-            float particlularExplosionRange = (isFragment) ? explosionRange * 0.5f : explosionRange ;
-            float particlularExplosionDamage = (isFragment) ? explosionDamage * 0.5f : explosionDamage ;
+            float particlularExplosionRange = (isFragment) ? explosionRange * 0.5f : explosionRange;
+            float particlularExplosionDamage = (isFragment) ? explosionDamage * 0.5f : explosionDamage;
+
+            var explosionEntity = _world.NewEntity();
+            explosionEntity.Get<ExplosionTag>();
+            explosionEntity.Get<OnSpawnRequest>();
+            ref var explosionAffectedTargets = ref explosionEntity.Get<AffectedTargets>();
+            explosionAffectedTargets.Targets = new System.Collections.Generic.List<EcsEntity>();
+
             foreach (var j in _enemiesFilter)
             {
                 ref var enemyEntity = ref _enemiesFilter.GetEntity(j);
@@ -33,6 +42,7 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
                 if (Vector2.Distance(transform.Transform.position, projectileTransform.Transform.position) <= particlularExplosionRange)
                 {
                     accumulativeDamage.Damage += particlularExplosionDamage;
+                    explosionAffectedTargets.Targets.Add(enemyEntity);
                 }
             }
 
@@ -46,5 +56,28 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
         }
     }
 }
+
+public class FireExplosionSystem : IEcsRunSystem
+{
+    private EcsFilter<AffectedTargets, ExplosionTag, OnSpawnRequest> _explosionsFilter;
+
+    private WeaponUpgradeLevels _weaponUpgrade;
+    public void Run()
+    {
+        if (_weaponUpgrade.FireLevel == 0) return;
+
+        foreach (var i in _explosionsFilter)
+        {
+            ref var explosionAffectedTargets = ref _explosionsFilter.Get1(i);
+
+            foreach (var target in explosionAffectedTargets.Targets)
+            {
+                if (!target.IsAlive()) continue;
+                target.Get<CatchFireRequest>();
+            }
+        }
+    }
+}
+
 
 

@@ -3,7 +3,7 @@ using Leopotam.Ecs;
 
 public class FireClosestEnemiesSystem : IEcsRunSystem, IEcsInitSystem
 {
-    private EcsFilter<EnemyTag, TransformComponent, TargetOnFireComponent>.Exclude<DeadTag> _enemiesFilter;
+    private EcsFilter<EnemyTag, TransformComponent, TargetOnFireComponent> _enemiesFilter;
 
     private EcsWorld _world;
     private GameSettings _gameSettings;
@@ -43,25 +43,19 @@ public class FireClosestEnemiesSystem : IEcsRunSystem, IEcsInitSystem
                 if (!targetEntity.IsAlive() || targetEntity.Has<TargetOnFireComponent>()) continue;
 
                 // Remove setting on fire in separate system
-                ref var newTargetOnFire = ref targetEntity.Get<TargetOnFireComponent>();
-                newTargetOnFire.DamagePerSec = _weaponUpgrades.GetFireDamagePerSecFromLevel();
-                newTargetOnFire.FireCatchRadius = _weaponUpgrades.GetFireCatchRadiusFromLevel();
-                newTargetOnFire.FireTimer.Set(_weaponUpgrades.GetFireTimerFromLevel());
-                newTargetOnFire.FireDamageTickTimer.Set(1f);
-                targetEntity.Get<EnemyParticlesComponent>().OnFireFx.Play();
+                targetEntity.Get<CatchFireRequest>();
             }
 
             _hitsCountTotal += hits.Length - 1;
         }
 
-        Debug.Log("HITS TOTAL: " + _hitsCountTotal);
         _hitsCountTotal = 0;
 
     }
 
     private void ResetTimer()
     {
-        _timer.Set(1f);
+        _timer.Set(0.5f);
     }
 }
 

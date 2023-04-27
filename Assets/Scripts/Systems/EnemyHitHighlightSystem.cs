@@ -3,7 +3,7 @@ using Leopotam.Ecs;
 
 public class EnemyHitHighlightSystem : IEcsRunSystem
 {
-    EcsFilter<HitImpactRequest, SpriteRendererComponent> _hitImpactFilter;
+    EcsFilter<AccumulativeDamageComponent, SpriteRendererComponent> _hitImpactFilter;
     EcsFilter<EnemyHitHighlightTimer, SpriteRendererComponent> _hitHighlightFilter;
 
     public void Run()
@@ -13,7 +13,7 @@ public class EnemyHitHighlightSystem : IEcsRunSystem
             ref var entity = ref _hitImpactFilter.GetEntity(i);
             ref var sprite = ref _hitImpactFilter.Get2(i);
 
-            sprite.SpriteRenderer.color = Color.white * 0.5f;
+            sprite.SpriteRenderer.color = Color.white.SetAlpha(0.5f);
 
             entity.Get<EnemyHitHighlightTimer>().Timer.Set(0.1f);
         }
@@ -25,10 +25,10 @@ public class EnemyHitHighlightSystem : IEcsRunSystem
             ref var spriteRenderer = ref _hitHighlightFilter.Get2(i);
 
             timer.Timer.Update();
-            if(timer.Timer.IsOver)
+            if (timer.Timer.IsOver)
             {
                 entity.Del<EnemyHitHighlightTimer>();
-                spriteRenderer.SpriteRenderer.color = Color.black;
+                spriteRenderer.SpriteRenderer.color = Color.white.SetAlpha(0f);
             }
         }
     }

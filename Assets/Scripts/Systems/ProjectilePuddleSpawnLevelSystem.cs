@@ -8,19 +8,21 @@ public class ProjectilePuddleSpawnLevelSystem : IEcsRunSystem
     private WeaponUpgradeLevels _weaponUpgrades = null;
     private Prefabs _prefabs;
     private EcsWorld _world;
+    private GameSettings _gameSetting;
 
     public void Run()
     {
         if (_weaponUpgrades.PuddleLevel == 0) return;
         foreach (var i in _projectilesFilter)
         {
-            ref var projectileEntity= ref _projectilesFilter.GetEntity(i);
+            ref var projectileEntity = ref _projectilesFilter.GetEntity(i);
             ref var projectileTransform = ref _projectilesFilter.Get3(i);
 
             // Spawn a puddle
             var entity = _world.NewEntity();
 
             entity.Get<PuddleTag>();
+            entity.Get<OnSpawnRequest>();
             ref var puddleData = ref entity.Get<PuddleData>();
 
             float projectileMod = 1f;
@@ -31,21 +33,24 @@ public class ProjectilePuddleSpawnLevelSystem : IEcsRunSystem
             puddleData.Efficiency = _weaponUpgrades.GetPuddleEfficiencyFromLevel() * projectileMod;
             puddleData.LifeTimer.Set(_weaponUpgrades.GetPuddleLifeTimeFromLevel() * projectileMod);
 
-            GameObject puddleGO = GameObject.Instantiate(_prefabs.PuddlePrefab, projectileTransform.Transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 4) * 90f));
-            puddleGO.transform.localScale = Vector3.one * puddleData.Radius * 2f;
+            Puddle puddle = GameObject.Instantiate(_prefabs.PuddlePrefab, projectileTransform.Transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 4) * 90f));
+            puddle.transform.localScale = Vector3.one * puddleData.Radius * 2f;
 
             if (UnityEngine.Random.Range(0, 2) == 1)
             {
-                puddleGO.transform.localScale = puddleGO.transform.localScale.SetX(-puddleGO.transform.localScale.x);
+                puddle.transform.localScale = puddle.transform.localScale.SetX(-puddle.transform.localScale.x);
             }
             if (UnityEngine.Random.Range(0, 2) == 1)
             {
-                puddleGO.transform.localScale = puddleGO.transform.localScale.SetY(-puddleGO.transform.localScale.y);
+                puddle.transform.localScale = puddle.transform.localScale.SetY(-puddle.transform.localScale.y);
             }
-            entity.Get<GameObjectComponent>().GameObject = puddleGO;
-            entity.Get<TransformComponent>().Transform = puddleGO.transform;
+            entity.Get<GameObjectComponent>().GameObject = puddle.gameObject;
+            entity.Get<TransformComponent>().Transform = puddle.transform;
+            entity.Get<PuddleParticlesComponent>() = puddle.PuddleParticles;
+            entity.Get<PuddleAffectedTargetsComponent>().AffectedTargets = new System.Collections.Generic.List<EcsEntity>();
         }
     }
 }
+
 
 

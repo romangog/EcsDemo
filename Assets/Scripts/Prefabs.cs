@@ -7,6 +7,6 @@ public class Prefabs
     public Projectile PistolShotPrefab;
     public GameObject EnemyPrefab;
     public GameObject ExplosionPrefab;
-    public GameObject PuddlePrefab;
+    public Puddle PuddlePrefab;
 }
 

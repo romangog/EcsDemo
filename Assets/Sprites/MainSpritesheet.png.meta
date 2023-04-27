@@ -1289,6 +1289,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: DefaultTile
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 816
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dff7c97879db9e4f9984419ce190268
+      internalID: -786531358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1314,6 +1335,7 @@ TextureImporter:
       MainSprite_Head: 1927544656186411968
       Explosion_2: 1724237158
       WeakPlatofrmPart_11: 9220185712161070121
+      DefaultTile: -786531358
       PlatformMask: -743660659168677957
       DoodleMonster_die1: 667091234
       MainSprite_LeftLeg: -4829120846345411339

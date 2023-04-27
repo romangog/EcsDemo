@@ -45,16 +45,21 @@ public class EcsStartup : MonoBehaviour
 
         _fixedSystems = new EcsSystems(_world)
             .Add(new MoveInOneDirectionSystem())
-            .Add(new PuddleEffectSystem())
-            .Add(new PlayerCentricMovementSystem());
+            .Add(new PuddleMainEffectSystem())
+                .Add(new PuddleFireEffectSystem())
+            .Add(new PlayerInputMovementSystem())
+            .Add(new PlayerCentricMovementSystem())
+            .Inject(_gameSettings)
+            .Inject(_weaponUpgradeLevels);
 
         _updateSystems = new EcsSystems(_world)
             .Add(new InitializeEntityReferencesSystem())
             .Add(new EnemyHitRegistrationSystem())
             .Add(new FragmentationSpawnSystem())
             .Add(new FragmentationFinalDeathSystem())
+            .Add(new EnemyCatchFireSystem())
+            .OneFrame<CatchFireRequest>()
             .Add(new EnemyThrowbackSystem())
-            .Add(new PlayerInputMovementSystem())
             .Add(new WeaponFireControlSystem())
             .Add(new FireClosestEnemiesSystem())
             .Add(new EnemyOnFireSystem())
@@ -89,10 +94,13 @@ public class EcsStartup : MonoBehaviour
 
             // Projectile OnDeath Upgrade Adjustment
             .Add(new ProjectileExplosionLevelSystem())
+                .Add(new FireExplosionSystem())
             .Add(new ProjectilePuddleSpawnLevelSystem())
+                .Add(new PuddleSpawnFireEffectSystem())
 
             .Add(new ProjectilesDeathSystem())
             .OneFrame<DeathRequest>()
+            .OneFrame<OnSpawnRequest>()
             .OneFrame<SpawnBulletsRequest>()
             .OneFrame<HitImpactRequest>()
             .OneFrame<ProjectileShotRequest>()

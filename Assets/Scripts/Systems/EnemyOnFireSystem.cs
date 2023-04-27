@@ -3,7 +3,7 @@
 public class EnemyOnFireSystem : IEcsRunSystem
 {
     private EcsFilter<EnemyTag, TransformComponent, TargetOnFireComponent>.Exclude<DeadTag> _aliveEnemiesFilter;
-    private EcsFilter<EnemyTag, DeadTag, TargetOnFireComponent> _deadEnemiesFilter;
+    //private EcsFilter<EnemyTag, DeadTag, TargetOnFireComponent> _deadEnemiesFilter;
 
     public void Run()
     {
@@ -31,14 +31,15 @@ public class EnemyOnFireSystem : IEcsRunSystem
 
         }
 
-        foreach (var enemyId in _deadEnemiesFilter)
-        {
-            ref var enemyEntity = ref _deadEnemiesFilter.GetEntity(enemyId);
-            enemyEntity.Del<TargetOnFireComponent>();
-            enemyEntity.Get<EnemyParticlesComponent>().OnFireFx.Stop();
-        }
+        //foreach (var enemyId in _deadEnemiesFilter)
+        //{
+        //    ref var enemyEntity = ref _deadEnemiesFilter.GetEntity(enemyId);
+        //    enemyEntity.Del<TargetOnFireComponent>();
+        //    enemyEntity.Get<EnemyParticlesComponent>().OnFireFx.Stop();
+        //}
     }
 }
+
 
 
 

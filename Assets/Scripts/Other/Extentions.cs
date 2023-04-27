@@ -10,6 +10,11 @@ public static class Extentions
         graphic.color = new Color(graphic.color.r, graphic.color.g, graphic.color.b, alpha);
     }
 
+    public static Color SetAlpha(this Color color, float alpha)
+    {
+        return new Color(color.r, color.g, color.b, alpha);
+    }
+
     public static Vector2 SetX(this Vector2 vector, float x)
     {
         return new Vector2(x, vector.y);
