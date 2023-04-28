@@ -4,7 +4,8 @@ Shader "Sprites/OverlayTintSprite"
 	Properties
 	{
 		[PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
-		//_Color("Tint", Color) = (1,1,1,1)
+
+		[PerRendererData] _BaseColor("BaseColor", Color) = (0,0,0,1)
 		[MaterialToggle] PixelSnap("Pixel snap", Float) = 0
 	}
 
@@ -46,7 +47,7 @@ Shader "Sprites/OverlayTintSprite"
 					float2 texcoord  : TEXCOORD0;
 				};
 
-				fixed4 _Color;
+				fixed4 _BaseColor;
 
 				v2f vert(appdata_t IN)
 				{
@@ -80,8 +81,10 @@ Shader "Sprites/OverlayTintSprite"
 				fixed4 frag(v2f IN) : SV_Target
 				{
 					fixed4 samp = SampleSpriteTexture(IN.texcoord);
-					fixed4 sampOpaque = lerp(samp, IN.color, IN.color.a);
+					fixed4 blackTint = lerp(samp, _BaseColor, 1 - samp);
+					fixed4 sampOpaque = lerp(blackTint, IN.color, IN.color.a);
 					fixed4 c = fixed4(sampOpaque.r, sampOpaque.g, sampOpaque.b, samp.a);
+
 					c.rgb *= c.a;
 					return c;
 				}

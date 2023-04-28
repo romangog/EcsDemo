@@ -9,6 +9,7 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
     private Prefabs _prefabs;
     private WeaponUpgradeLevels _weaponUpgrades;
     private LevelData _levelData;
+    private GameSettings _gameSettings;
 
     private float _spawnTimer;
     private float _spawnTimerMax;

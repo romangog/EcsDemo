@@ -10,6 +10,7 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
     private WeaponUpgradeLevels _weaponUpgrades = null;
     private Prefabs _prefabs;
     private EcsWorld _world;
+    private GameSettings _gameSettings;
 
     public void Run()
     {
@@ -37,44 +38,26 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
                 ref var enemyEntity = ref _enemiesFilter.GetEntity(j);
                 ref var transform = ref _enemiesFilter.Get2(j);
 
-                ref var accumulativeDamage = ref enemyEntity.Get<AccumulativeDamageComponent>();
 
                 if (Vector2.Distance(transform.Transform.position, projectileTransform.Transform.position) <= particlularExplosionRange)
                 {
-                    accumulativeDamage.Damage += particlularExplosionDamage;
+                    enemyEntity.Get<AccumulativeDamageComponent>().Damage += particlularExplosionDamage;
                     explosionAffectedTargets.Targets.Add(enemyEntity);
                 }
             }
 
+
             // Spawn explosion fx
-            GameObject explosionFx = GameObject.Instantiate(
+            Explosion explosionGO = GameObject.Instantiate(
                 _prefabs.ExplosionPrefab,
                 projectileTransform.Transform.position,
                 Quaternion.Euler(0, 0, UnityEngine.Random.Range(180f, 180f)));
-            explosionFx.transform.localScale = Vector3.one * _weaponUpgrades.GetProjectileExplosionFxScaleFromLevel();
-            GameObject.Destroy(explosionFx, 0.2f);
-        }
-    }
-}
+            explosionGO.transform.localScale = Vector3.one * _weaponUpgrades.GetProjectileExplosionFxScaleFromLevel();
 
-public class FireExplosionSystem : IEcsRunSystem
-{
-    private EcsFilter<AffectedTargets, ExplosionTag, OnSpawnRequest> _explosionsFilter;
+            explosionEntity.Get<SpriteRendererComponent>() = explosionGO.SpriteRenderer;
+            explosionEntity.Get<SetBaseColorRequest>().BaseColor = _gameSettings.BlackColor;
 
-    private WeaponUpgradeLevels _weaponUpgrade;
-    public void Run()
-    {
-        if (_weaponUpgrade.FireLevel == 0) return;
-
-        foreach (var i in _explosionsFilter)
-        {
-            ref var explosionAffectedTargets = ref _explosionsFilter.Get1(i);
-
-            foreach (var target in explosionAffectedTargets.Targets)
-            {
-                if (!target.IsAlive()) continue;
-                target.Get<CatchFireRequest>();
-            }
+            GameObject.Destroy(explosionGO.gameObject, 0.4f);
         }
     }
 }

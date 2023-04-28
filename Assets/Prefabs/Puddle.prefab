@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f80aa9662e087c448a276a78219c519a, type: 2}
+  - {fileID: 2100000, guid: 672bcde68009e084e9e42d967d58353a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 1124025926, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _puddlePaticles:
     FireFx: {fileID: 4797330497295851974}
+  _spriteRenderer:
+    SpriteRenderer: {fileID: 6027871427758837347}
 --- !u!1001 &7482853885326832328
 PrefabInstance:
   m_ObjectHideFlags: 0

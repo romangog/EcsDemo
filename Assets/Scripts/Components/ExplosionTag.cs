@@ -2,9 +2,6 @@
 {
 }
 
-public struct ExplosionSpawnedRequest
-{
-}
 
 
 

@@ -80,6 +80,7 @@ Shader "Sprites/BlackColorOverlay"
 					fixed4 samp = SampleSpriteTexture(IN.texcoord);
 					fixed4 lerped = lerp(samp, IN.color, 1-samp);
 					fixed4 c = fixed4(lerped.r, lerped.g, lerped.b,samp.a);
+
 					c.rgb *= c.a;
 					return c;
 				}

@@ -3,7 +3,9 @@
 public class EnemyCatchFireSystem : IEcsRunSystem
 {
     private EcsFilter<EnemyTag, CatchFireRequest, EnemyParticlesComponent>.Exclude<TargetOnFireComponent> _enemiesFilter;
+
     private WeaponUpgradeLevels _weaponUpgrade;
+
     public void Run()
     {
         foreach (var i in _enemiesFilter)
@@ -19,6 +21,7 @@ public class EnemyCatchFireSystem : IEcsRunSystem
         }
     }
 }
+
 
 
 

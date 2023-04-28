@@ -47,6 +47,7 @@ public class EcsStartup : MonoBehaviour
             .Add(new MoveInOneDirectionSystem())
             .Add(new PuddleMainEffectSystem())
                 .Add(new PuddleFireEffectSystem())
+                .Add(new PuddleIceEffectSystem())
             .Add(new PlayerInputMovementSystem())
             .Add(new PlayerCentricMovementSystem())
             .Inject(_gameSettings)
@@ -55,14 +56,24 @@ public class EcsStartup : MonoBehaviour
         _updateSystems = new EcsSystems(_world)
             .Add(new InitializeEntityReferencesSystem())
             .Add(new EnemyHitRegistrationSystem())
-            .Add(new FragmentationSpawnSystem())
-            .Add(new FragmentationFinalDeathSystem())
+                .Add(new FragmentationSpawnSystem())
+                .Add(new EnemyFireHitSystem())
+                .Add(new EnemyIceHitSystem())
+                .OneFrame<HitByProjectileRequest>()
+
+            .Add(new ProjectilesFinalDeathSystem())
+
             .Add(new EnemyCatchFireSystem())
             .OneFrame<CatchFireRequest>()
+            .Add(new EnemyCatchIceSystem())
+            .OneFrame<CatchIceRequest>()
+
             .Add(new EnemyThrowbackSystem())
             .Add(new WeaponFireControlSystem())
             .Add(new FireClosestEnemiesSystem())
+
             .Add(new EnemyOnFireSystem())
+            .Add(new EnemyOnIceSystem())
 
             .Add(new BulletSpawnSystem())
 
@@ -89,15 +100,21 @@ public class EcsStartup : MonoBehaviour
             .Add(new MoveInOneDirectionSystem())
             .Add(new EnemyDeadDisableSystem())
             .Add(new EnemySpawnSystem())
+
             .Add(new ProjectileLifeEndSystem())
             .Add(new PuddleLifeEndSystem())
 
             // Projectile OnDeath Upgrade Adjustment
             .Add(new ProjectileExplosionLevelSystem())
                 .Add(new FireExplosionSystem())
+                .Add(new IceExplosionSystem())
             .Add(new ProjectilePuddleSpawnLevelSystem())
                 .Add(new PuddleSpawnFireEffectSystem())
+                .Add(new PuddleSpawnIceEffectSystem())
 
+            .Add(new SetColorSystem())
+            .OneFrame<SetBaseColorRequest>()
+            .Add(new KillExplosionEntitySystem())
             .Add(new ProjectilesDeathSystem())
             .OneFrame<DeathRequest>()
             .OneFrame<OnSpawnRequest>()
@@ -202,6 +219,12 @@ public class EcsStartup : MonoBehaviour
             if (GUI.Button(new Rect(pos, size), "Fire " + _weaponUpgradeLevels.FireLevel.ToString()))
             {
                 _weaponUpgradeLevels.FireLevel++;
+            }
+            pos += Vector2.up * 20;
+
+            if (GUI.Button(new Rect(pos, size), "Ice " + _weaponUpgradeLevels.IceLevel.ToString()))
+            {
+                _weaponUpgradeLevels.IceLevel++;
             }
             pos += Vector2.up * 20;
         }

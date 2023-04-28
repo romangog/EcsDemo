@@ -48,15 +48,11 @@ public class WeaponUpgradeLevels
         return (GetProjectileSpeedFromLevel() * GetProjectileSizeFromLevel()) / 3f;
     }
 
-    internal float GetProjectileSpreadFromLevel(int level)
-    {
-        return UnityEngine.Random.Range(-90f, 90f) * (level / 30f);
-    }
-
     internal float GetProjectileSpreadFromLevel()
     {
         return UnityEngine.Random.Range(-90f, 90f) * (SpreadLevel / 30f);
     }
+
 
 
     internal int GetProjectileMultiplierFromLevel()
@@ -82,21 +78,6 @@ public class WeaponUpgradeLevels
     internal float GetProjectileAutoAimRotateSpeedFromLevel()
     {
         return Mathf.LerpUnclamped(0, 180f, AutoAimLevel / 3f);
-    }
-
-    internal float GetFireDamagePerSecFromLevel()
-    {
-        return Mathf.LerpUnclamped(0f, 100f, FireLevel / 4f);
-    }
-
-    internal float GetFireTimerFromLevel()
-    {
-        return Mathf.LerpUnclamped(0f, 8f, FireLevel / 4f);
-    }
-
-    internal float GetFireCatchRadiusFromLevel()
-    {
-        return Mathf.LerpUnclamped(0f, 2f, FireLevel / 4f);
     }
 
     internal float GetProjectileExplosionRangeFromLevel()
@@ -127,6 +108,31 @@ public class WeaponUpgradeLevels
     internal float GetPuddleRadiusFromLevel()
     {
         return Mathf.LerpUnclamped(0.5f, 1.5f, ProjectileSizeLevel / 3f);    
+    }
+
+    internal float GetFireDamagePerSecFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 100f, FireLevel / 4f);
+    }
+
+    internal float GetFireTimerFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 8f, FireLevel / 4f);
+    }
+
+    internal float GetFireCatchRadiusFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 2f, FireLevel / 4f);
+    }
+
+    internal float GetIceTimerFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 8f, IceLevel / 4f);
+    }
+
+    internal float GetIceDamageMultiplierFromLevel()
+    {
+        return Mathf.LerpUnclamped(1f, 2f, IceLevel / 4f);
     }
 
     internal int GetLevelsSum()

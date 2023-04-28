@@ -6,3 +6,4 @@ public struct SpriteRendererComponent
 {
     public SpriteRenderer SpriteRenderer;
 }
+

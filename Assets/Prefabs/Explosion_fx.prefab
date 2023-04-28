@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6402276704022823417}
   - component: {fileID: 8599696317182952804}
   - component: {fileID: 5909634725329238792}
+  - component: {fileID: 8043768523475355796}
   m_Layer: 0
   m_Name: Explosion_fx
   m_TagString: Untagged
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 672bcde68009e084e9e42d967d58353a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1041471578, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,3 +106,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8043768523475355796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619909098883992376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399d9bd3d436a664896f321dd612fee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer:
+    SpriteRenderer: {fileID: 8599696317182952804}

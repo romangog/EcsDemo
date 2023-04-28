@@ -16,7 +16,6 @@ public class EnemyOnFireSystem : IEcsRunSystem
             enemyOnFire.FireDamageTickTimer.Update();
             if (enemyOnFire.FireDamageTickTimer.IsOver)
             {
-                // Damage
                 enemyEntity.Get<AccumulativeDamageComponent>().Damage += enemyOnFire.DamagePerSec;
                 enemyOnFire.FireDamageTickTimer.Set(1f);
             }
@@ -26,17 +25,9 @@ public class EnemyOnFireSystem : IEcsRunSystem
             {
                 enemyEntity.Del<TargetOnFireComponent>();
                 enemyEntity.Get<EnemyParticlesComponent>().OnFireFx.Stop();
-                // Stop fire
             }
 
         }
-
-        //foreach (var enemyId in _deadEnemiesFilter)
-        //{
-        //    ref var enemyEntity = ref _deadEnemiesFilter.GetEntity(enemyId);
-        //    enemyEntity.Del<TargetOnFireComponent>();
-        //    enemyEntity.Get<EnemyParticlesComponent>().OnFireFx.Stop();
-        //}
     }
 }
 

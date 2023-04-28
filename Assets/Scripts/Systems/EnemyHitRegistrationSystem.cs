@@ -30,16 +30,10 @@ public class EnemyHitRegistrationSystem : IEcsRunSystem
 
             if (!targetEntity.IsAlive()) return;
 
+            targetEntity.Get<HitByProjectileRequest>();
             targetEntity.Get<AccumulativeDamageComponent>().Damage += pistolShotEntity.Get<ProjectileDamageComponent>().Damage;
             targetEntity.Get<HitImpactRequest>().PushForce +=
                 bulletMoveForward.Direction * _weaponUpgradeLevels.GetThrowbackForceFromLevel();
-
-
-            // Set on fire -- Move into separate system
-            if(_weaponUpgradeLevels.FireLevel > 0)
-            {
-                targetEntity.Get<CatchFireRequest>();
-            }
 
             if (bulletPenetration.PenetrationsLeft == 0)
             {

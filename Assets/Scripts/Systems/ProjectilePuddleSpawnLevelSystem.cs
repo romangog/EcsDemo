@@ -47,7 +47,9 @@ public class ProjectilePuddleSpawnLevelSystem : IEcsRunSystem
             entity.Get<GameObjectComponent>().GameObject = puddle.gameObject;
             entity.Get<TransformComponent>().Transform = puddle.transform;
             entity.Get<PuddleParticlesComponent>() = puddle.PuddleParticles;
+            entity.Get<SpriteRendererComponent>() = puddle.SpriteRenderer;
             entity.Get<PuddleAffectedTargetsComponent>().AffectedTargets = new System.Collections.Generic.List<EcsEntity>();
+            entity.Get<SetBaseColorRequest>().BaseColor = _gameSetting.BlackColor;
         }
     }
 }
