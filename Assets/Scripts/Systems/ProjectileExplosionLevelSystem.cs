@@ -30,7 +30,7 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
             var explosionEntity = _world.NewEntity();
             explosionEntity.Get<ExplosionTag>();
             explosionEntity.Get<OnSpawnRequest>();
-            ref var explosionAffectedTargets = ref explosionEntity.Get<AffectedTargets>();
+            ref var explosionAffectedTargets = ref explosionEntity.Get<AffectedTargetsComponent>();
             explosionAffectedTargets.Targets = new System.Collections.Generic.List<EcsEntity>();
 
             foreach (var j in _enemiesFilter)
@@ -55,6 +55,7 @@ public class ProjectileExplosionLevelSystem : IEcsRunSystem
             explosionGO.transform.localScale = Vector3.one * _weaponUpgrades.GetProjectileExplosionFxScaleFromLevel();
 
             explosionEntity.Get<SpriteRendererComponent>() = explosionGO.SpriteRenderer;
+            explosionEntity.Get<ElementalParticlesComponent>()= explosionGO.ElementalParticles;
             explosionEntity.Get<SetBaseColorRequest>().BaseColor = _gameSettings.BlackColor;
 
             GameObject.Destroy(explosionGO.gameObject, 0.4f);

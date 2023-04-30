@@ -8,5 +8,6 @@ public class Prefabs
     public GameObject EnemyPrefab;
     public Explosion ExplosionPrefab;
     public Puddle PuddlePrefab;
+    public LightningFX LigntningChainFx;
 }
 

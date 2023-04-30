@@ -24,7 +24,7 @@ public class EnemyOnFireSystem : IEcsRunSystem
             if (enemyOnFire.FireTimer.IsOver)
             {
                 enemyEntity.Del<TargetOnFireComponent>();
-                enemyEntity.Get<EnemyParticlesComponent>().OnFireFx.Stop();
+                enemyEntity.Get<ElementalParticlesComponent>().FireFx.Stop();
             }
 
         }

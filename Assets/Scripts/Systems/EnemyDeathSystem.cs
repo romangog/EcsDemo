@@ -17,7 +17,7 @@ public class EnemyDeathSystem : IEcsRunSystem
             entity.Get<DeadTag>();
 
             ref var timerAction = ref entity.Get<TimerComponent>();
-            timerAction.Timer = 0.3f;
+            timerAction.Timer.Set(0.3f);
         }
     }
 

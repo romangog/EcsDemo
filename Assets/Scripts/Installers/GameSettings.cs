@@ -9,6 +9,7 @@ public class GameSettings
     public float FragmentsPathLengthMax;
     public float PlayerBaseMoveSpeed;
     public float EnemyBaseMoveSpeed;
+    public float LightningReachRadius;
     public Color IceColor;
     public Color BlackColor;
     public LayerMask EnemyColliderLayerMask;

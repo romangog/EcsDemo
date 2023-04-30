@@ -2,7 +2,7 @@
 
 public class IceExplosionSystem : IEcsRunSystem
 {
-    private EcsFilter<AffectedTargets, SetBaseColorRequest, ExplosionTag, OnSpawnRequest> _explosionsFilter;
+    private EcsFilter<AffectedTargetsComponent, SetBaseColorRequest, ExplosionTag, OnSpawnRequest> _explosionsFilter;
 
     private WeaponUpgradeLevels _weaponUpgrade;
     private GameSettings _gameSettings;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PuddleFireEffectSystem : IEcsRunSystem
 {
-    private EcsFilter<PuddleAffectedTargetsComponent, PuddleTag> _puddlesFilter;
+    private EcsFilter<PuddleAffectedTargetsComponent, PuddleFireEffectTimer, PuddleTag> _puddlesFilter;
 
     private WeaponUpgradeLevels _weaponUpgrades;
 
@@ -13,32 +13,16 @@ public class PuddleFireEffectSystem : IEcsRunSystem
         foreach (var i in _puddlesFilter)
         {
             ref var affectedTargets = ref _puddlesFilter.Get1(i);
+            ref var timer = ref _puddlesFilter.Get2(i);
 
-            foreach (var affectedTarget in affectedTargets.AffectedTargets)
+            timer.Timer.Update();
+            if (timer.Timer.IsOver)
             {
-                affectedTarget.Get<CatchFireRequest>();
-            }
-        }
-    }
-}
-
-
-public class PuddleIceEffectSystem : IEcsRunSystem
-{
-    private EcsFilter<PuddleAffectedTargetsComponent, PuddleTag> _puddlesFilter;
-
-    private WeaponUpgradeLevels _weaponUpgrades;
-
-    public void Run()
-    {
-        if (_weaponUpgrades.IceLevel == 0) return;
-        foreach (var i in _puddlesFilter)
-        {
-            ref var affectedTargets = ref _puddlesFilter.Get1(i);
-
-            foreach (var affectedTarget in affectedTargets.AffectedTargets)
-            {
-                affectedTarget.Get<CatchIceRequest>();
+                timer.Timer.Set(1f);
+                foreach (var affectedTarget in affectedTargets.AffectedTargets)
+                {
+                    affectedTarget.Get<CatchFireRequest>();
+                }
             }
         }
     }

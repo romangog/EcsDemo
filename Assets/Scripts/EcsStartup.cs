@@ -48,25 +48,34 @@ public class EcsStartup : MonoBehaviour
             .Add(new PuddleMainEffectSystem())
                 .Add(new PuddleFireEffectSystem())
                 .Add(new PuddleIceEffectSystem())
+                .Add(new PuddleLightningEffectSystem())
             .Add(new PlayerInputMovementSystem())
             .Add(new PlayerCentricMovementSystem())
+            .Add(new LightningFxPositionsSystem())
             .Inject(_gameSettings)
             .Inject(_weaponUpgradeLevels);
 
         _updateSystems = new EcsSystems(_world)
             .Add(new InitializeEntityReferencesSystem())
+
+            // Projectie OnHit
             .Add(new EnemyHitRegistrationSystem())
                 .Add(new FragmentationSpawnSystem())
                 .Add(new EnemyFireHitSystem())
                 .Add(new EnemyIceHitSystem())
+                .Add(new LightningEmmisionSystem())
                 .OneFrame<HitByProjectileRequest>()
 
             .Add(new ProjectilesFinalDeathSystem())
+            .Add(new GiveGameObjectNameSystem())
+                .OneFrame<GiveGameObjectNameRequest>()
 
             .Add(new EnemyCatchFireSystem())
             .OneFrame<CatchFireRequest>()
             .Add(new EnemyCatchIceSystem())
             .OneFrame<CatchIceRequest>()
+            .Add(new EnemyGetLightningHittedSystem())
+            .OneFrame<GetHitByLightningRequest>()
 
             .Add(new EnemyThrowbackSystem())
             .Add(new WeaponFireControlSystem())
@@ -78,17 +87,21 @@ public class EcsStartup : MonoBehaviour
             .Add(new BulletSpawnSystem())
 
             // Projectile OnShot Upgrade Adjustment
-            .Add(new ProjectileSpeedLevelSystem())         // Speed
-            .Add(new ProjectileSpreadLevelSystem())        // Spread
-            .Add(new ProjectileDamageLevelSystem())        // Damage
-            .Add(new ProjectileSizeLevelSystem())          // Size
-            .Add(new ProjectilePenetrationLevelSystem())   // Penetration
-            .Add(new ProjectileFragmentationLevelSystem())   // Penetration
+            .Add(new ProjectileSpeedLevelSystem())
+            .Add(new ProjectileSpreadLevelSystem())
+            .Add(new ProjectileDamageLevelSystem())
+            .Add(new ProjectileSizeLevelSystem())
+            .Add(new ProjectilePenetrationLevelSystem())
+            .Add(new ProjectileSetOnFireSystem())
+            .Add(new ProjectileSetOnIceSystem())
 
             .Add(new PlayerInvulSystem())
             .Add(new PlayerHealthSystem())
             .Add(new EnemyHitImpactSystem())
             .Add(new EnemyHitHighlightSystem())
+
+            .Add(new EnemyIceDamageMultiplicationSystem())
+
             .Add(new EnemyHealthSystem())
             .Add(new EnemyDeathSystem())
             .Add(new ChildEntitiesDestroySystem())
@@ -101,22 +114,26 @@ public class EcsStartup : MonoBehaviour
             .Add(new EnemyDeadDisableSystem())
             .Add(new EnemySpawnSystem())
 
+            .Add(new LightningFxSpawnSystem())
+
             .Add(new ProjectileLifeEndSystem())
             .Add(new PuddleLifeEndSystem())
-
+            .Add(new LightningLifeSystem())
             // Projectile OnDeath Upgrade Adjustment
             .Add(new ProjectileExplosionLevelSystem())
                 .Add(new FireExplosionSystem())
                 .Add(new IceExplosionSystem())
             .Add(new ProjectilePuddleSpawnLevelSystem())
-                .Add(new PuddleSpawnFireEffectSystem())
-                .Add(new PuddleSpawnIceEffectSystem())
+                .Add(new PuddleSpawnElementalEffects())
+
+
 
             .Add(new SetColorSystem())
             .OneFrame<SetBaseColorRequest>()
             .Add(new KillExplosionEntitySystem())
             .Add(new ProjectilesDeathSystem())
             .OneFrame<DeathRequest>()
+            .OneFrame<LightningSpawnRequest>()
             .OneFrame<OnSpawnRequest>()
             .OneFrame<SpawnBulletsRequest>()
             .OneFrame<HitImpactRequest>()
@@ -225,6 +242,12 @@ public class EcsStartup : MonoBehaviour
             if (GUI.Button(new Rect(pos, size), "Ice " + _weaponUpgradeLevels.IceLevel.ToString()))
             {
                 _weaponUpgradeLevels.IceLevel++;
+            }
+            pos += Vector2.up * 20;
+
+            if (GUI.Button(new Rect(pos, size), "Lightning " + _weaponUpgradeLevels.LightningLevel.ToString()))
+            {
+                _weaponUpgradeLevels.LightningLevel++;
             }
             pos += Vector2.up * 20;
         }

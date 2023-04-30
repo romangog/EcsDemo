@@ -5,5 +5,5 @@ using UnityEngine;
 
 public struct TimerComponent
 {
-    public float Timer;
+    public Timer Timer;
 }

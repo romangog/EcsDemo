@@ -2,7 +2,7 @@
 
 public class FireExplosionSystem : IEcsRunSystem
 {
-    private EcsFilter<AffectedTargets, ExplosionTag, OnSpawnRequest> _explosionsFilter;
+    private EcsFilter<AffectedTargetsComponent, ElementalParticlesComponent, ExplosionTag, OnSpawnRequest> _explosionsFilter;
 
     private WeaponUpgradeLevels _weaponUpgrade;
     public void Run()
@@ -12,6 +12,9 @@ public class FireExplosionSystem : IEcsRunSystem
         foreach (var i in _explosionsFilter)
         {
             ref var explosionAffectedTargets = ref _explosionsFilter.Get1(i);
+            ref var elementalParticles = ref _explosionsFilter.Get2(i);
+
+            elementalParticles.FireFx.Play();
 
             foreach (var target in explosionAffectedTargets.Targets)
             {

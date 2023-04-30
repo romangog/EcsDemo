@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using System.Collections.Generic;
 
-public struct AffectedTargets
+public struct AffectedTargetsComponent
 {
     public List<EcsEntity> Targets;
 }

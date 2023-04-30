@@ -14,9 +14,9 @@ public class EnemyDeadDisableSystem : IEcsRunSystem
             ref var entity = ref _deadEnemiesTimer.GetEntity(i);
             ref var timer = ref _deadEnemiesTimer.Get3(i);
 
-            timer.Timer = Mathf.MoveTowards(timer.Timer, 0f, Time.deltaTime);
+            timer.Timer.Update();
 
-            if(timer.Timer == 0f)
+            if(timer.Timer.IsOver)
             {
                 GameObject.Destroy(entity.Get<GameObjectComponent>().GameObject, 0.1f);
                 entity.Destroy();

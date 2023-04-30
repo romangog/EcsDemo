@@ -5,6 +5,7 @@ public struct Timer
 {
     public float TimeLeft;
     public bool IsOver;
+    private float _setTime;
 
     public void Update()
     {
@@ -17,6 +18,13 @@ public struct Timer
     internal void Set(float time)
     {
         TimeLeft = time;
+        _setTime = time;
+        IsOver = false;
+    }
+
+    internal void Reset()
+    {
+        TimeLeft = _setTime;
         IsOver = false;
     }
 }

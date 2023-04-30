@@ -60,6 +60,11 @@ public class WeaponUpgradeLevels
         return ProjectileMultiplierLevel + 1;
     }
 
+    internal float GetLightningHitDamageFromLevel()
+    {
+        return Mathf.LerpUnclamped(0f, 50f, LightningLevel / 4f);
+    }
+
     internal int GetProjectileFragmentationFromLevel()
     {
         return FragmentationLevel * 3;
@@ -97,17 +102,17 @@ public class WeaponUpgradeLevels
 
     internal float GetPuddleEfficiencyFromLevel()
     {
-        return Mathf.LerpUnclamped(1f, 0.25f, PuddleLevel / 3f);
+        return Mathf.Lerp(1f, 0.25f, PuddleLevel / 5f);
     }
 
     internal float GetPuddleLifeTimeFromLevel()
     {
-        return Mathf.LerpUnclamped(0f, 10f, PuddleLevel / 3f);
+        return Mathf.LerpUnclamped(0f, 3, PuddleLevel / 3f);
     }
 
     internal float GetPuddleRadiusFromLevel()
     {
-        return Mathf.LerpUnclamped(0.5f, 1.5f, ProjectileSizeLevel / 3f);    
+        return Mathf.LerpUnclamped(0.5f, 1.5f, ProjectileSizeLevel / 3f);
     }
 
     internal float GetFireDamagePerSecFromLevel()
