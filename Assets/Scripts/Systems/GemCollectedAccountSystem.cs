@@ -134,7 +134,7 @@ public class PlayerLevelUpShowUpgradeScreenSystem : IEcsRunSystem
             ref var viewComponent = ref _upgradeButtons.Get1(i);
             var upgrade = _weaponUpgrades.WeaponLevels[UnityEngine.Random.Range(0, _weaponUpgrades.WeaponLevels.Count)];
             viewComponent.Icon.sprite = upgrade.Sprite;
-            viewComponent.Description.text = upgrade.GetDescription();
+            viewComponent.Description.text = upgrade.Description;
             viewComponent.WeaponLevel = upgrade;
             viewComponent.View.SetActive(true);
             entity.Get<ShownTag>();
@@ -156,7 +156,6 @@ public class UpgradeChooseClickedSystem : IEcsRunSystem
 
         ref var upgradeView = ref _upgradesClicked.Get1(0);
         upgradeView.WeaponLevel++;
-        Debug.Log("Upgrade");
         foreach (var i in _upgradeButtons)
         {
             ref var buttonEntity = ref _upgradeButtons.GetEntity(i);
@@ -175,7 +174,6 @@ public class UiEventsClearSystem : IEcsRunSystem
     {
         foreach (var i in _clicks)
         {
-            Debug.Log("Del");
             ref var clickEntity = ref _clicks.GetEntity(i);
             clickEntity.Del<ButtonClickedTag>();
         }

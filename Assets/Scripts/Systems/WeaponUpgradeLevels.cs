@@ -5,41 +5,47 @@ using UnityEngine;
 [Serializable]
 public class WeaponUpgradeLevels
 {
-    public DamageLevel DamageLevel = new DamageLevel();
-    public FireRateLevel FireRateLevel = new FireRateLevel();
-    public ProjectileSpeedLevel SpeedLevel = new ProjectileSpeedLevel();
-    public ProjectileMultiplierLevel ProjectileMultiplierLevel = new ProjectileMultiplierLevel();
-    public ProjectileSizeLevel ProjectileSizeLevel = new ProjectileSizeLevel();
-    public ProjectileAutoAimLevel AutoAimLevel = new ProjectileAutoAimLevel();
-    public ProjectileFragmentationLevel FragmentationLevel = new ProjectileFragmentationLevel();
-    public ProjectilePenetrationLevel PenetrationLevel = new ProjectilePenetrationLevel();
-    public ProjectileSpreadLevel SpreadLevel = new ProjectileSpreadLevel();
-    public ProjectileExplosionLevel ExplosionLevel = new ProjectileExplosionLevel();
-    public ProjectilePuddleLevel PuddleLevel = new ProjectilePuddleLevel();
-    public ProjectileIceLevel IceLevel = new ProjectileIceLevel();
-    public ProjectileFireLevel FireLevel = new ProjectileFireLevel();
-    public ProjectileLightningLevel LightningLevel = new ProjectileLightningLevel();
-    public ProjectileVampirismLevel VampirismLevel = new ProjectileVampirismLevel();
+
+    private const int DAMAGE_LEVEL_INDEX = 0;
+    private const int FIRERATE_LEVEL_INDEX = 1;
+    private const int SPEED_LEVEL_INDEX = 2;
+    private const int MULTIPLIER_LEVEL_INDEX = 3;
+    private const int SIZE_LEVEL_INDEX = 4;
+    private const int AIM_LEVEL_INDEX = 5;
+    private const int FRAGMENTATION_LEVEL_INDEX = 6;
+    private const int PENETRATION_LEVEL_INDEX = 7;
+    private const int SPREAD_LEVEL_INDEX = 8;
+    private const int EXPLOSION_LEVEL_INDEX = 9;
+    private const int PUDDLE_LEVEL_INDEX = 10;
+    private const int ICE_LEVEL_INDEX = 11;
+    private const int FIRE_LEVEL_INDEX = 12;
+    private const int LIGHTNING_LEVEL_INDEX = 13;
+    private const int VAMPIRISM_LEVEL_INDEX = 14;
+
+    public WeaponLevel DamageLevel => WeaponLevels[DAMAGE_LEVEL_INDEX];
+    public WeaponLevel FireRateLevel => WeaponLevels[FIRERATE_LEVEL_INDEX];
+    public WeaponLevel SpeedLevel => WeaponLevels[SPEED_LEVEL_INDEX];
+    public WeaponLevel ProjectileMultiplierLevel => WeaponLevels[MULTIPLIER_LEVEL_INDEX];
+    public WeaponLevel ProjectileSizeLevel => WeaponLevels[SIZE_LEVEL_INDEX];
+    public WeaponLevel AutoAimLevel => WeaponLevels[AIM_LEVEL_INDEX];
+    public WeaponLevel FragmentationLevel => WeaponLevels[FRAGMENTATION_LEVEL_INDEX];
+    public WeaponLevel PenetrationLevel => WeaponLevels[PENETRATION_LEVEL_INDEX];
+    public WeaponLevel SpreadLevel => WeaponLevels[SPREAD_LEVEL_INDEX];
+    public WeaponLevel ExplosionLevel => WeaponLevels[EXPLOSION_LEVEL_INDEX];
+    public WeaponLevel PuddleLevel => WeaponLevels[PUDDLE_LEVEL_INDEX];
+    public WeaponLevel IceLevel => WeaponLevels[ICE_LEVEL_INDEX];
+    public WeaponLevel FireLevel => WeaponLevels[FIRE_LEVEL_INDEX];
+    public WeaponLevel LightningLevel => WeaponLevels[LIGHTNING_LEVEL_INDEX];
+    public WeaponLevel VampirismLevel => WeaponLevels[VAMPIRISM_LEVEL_INDEX];
 
     public List<WeaponLevel> WeaponLevels = new List<WeaponLevel>();
 
-    public WeaponUpgradeLevels()
+    public WeaponUpgradeLevels(WeaponsLevelsSettings weaponsSettings)
     {
-        WeaponLevels.Add(DamageLevel);
-        WeaponLevels.Add(FireRateLevel);
-        WeaponLevels.Add(SpeedLevel);
-        WeaponLevels.Add(ProjectileMultiplierLevel);
-        WeaponLevels.Add(ProjectileSizeLevel);
-        WeaponLevels.Add(AutoAimLevel);
-        WeaponLevels.Add(FragmentationLevel);
-        WeaponLevels.Add(PenetrationLevel);
-        WeaponLevels.Add(SpreadLevel);
-        WeaponLevels.Add(ExplosionLevel);
-        WeaponLevels.Add(PuddleLevel);
-        WeaponLevels.Add(IceLevel);
-        WeaponLevels.Add(FireLevel);
-        WeaponLevels.Add(LightningLevel);
-        WeaponLevels.Add(VampirismLevel);
+        for (int i = 0; i < weaponsSettings.AllSettings.Length; i++)
+        {
+            WeaponLevels.Add(new WeaponLevel(weaponsSettings.AllSettings[i]));
+        }
     }
     public float GetShootFrequencyFromLevel()
     {

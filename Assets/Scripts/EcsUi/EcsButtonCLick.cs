@@ -18,7 +18,6 @@ public class EcsButtonCLick : MonoBehaviour
 
     private void OnClick()
     {
-        Debug.Log("OnClick");
         _convert.TryGetEntity().Value.Get<ButtonClickedTag>();
     }
 }

@@ -17,7 +17,7 @@ public class GameSettings
 }
 
 [Serializable]
-public class WeaponsSettings
+public class WeaponsLevelsSettings
 {
     public WeaponLevel.Settings[] AllSettings;
 }

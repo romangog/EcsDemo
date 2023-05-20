@@ -32,3 +32,50 @@ MonoBehaviour:
     EnemyColliderLayerMask:
       serializedVersion: 2
       m_Bits: 128
+  _weaponSettings:
+    AllSettings:
+    - IconSprite: {fileID: 642229743, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: DAMAGE UP!
+      Name: DAMAGE
+    - IconSprite: {fileID: -829989675, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: RELOAD FASTER
+      Name: FIRE RATE
+    - IconSprite: {fileID: 88329233, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLET FLY FASTER
+      Name: SPEED
+    - IconSprite: {fileID: -1951666873, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: PLUS ONE BULLET PER SHOT
+      Name: MULTIPLIER
+    - IconSprite: {fileID: 1652417292, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BIGGER BULLETS
+      Name: SIZE
+    - IconSprite: {fileID: 906314515, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: SELF-AIMING BULLETS
+      Name: AUTO AIM
+    - IconSprite: {fileID: 1199973503, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: MORE FRAGMENTATION FROM BULLET
+      Name: FRAGMENTATION
+    - IconSprite: {fileID: 965102098, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLET PENTRATES MORE ENEMIES BEFORE DESTROYING
+      Name: PENETRATION
+    - IconSprite: {fileID: -1444955919, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: LESS AIM, MORE HITS
+      Name: SPREAD
+    - IconSprite: {fileID: 600241150, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLETS EXPLODE WHEN GET DESTROYED
+      Name: EXPLOSION
+    - IconSprite: {fileID: -2035707253, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLETS SPAWN STICKY PUDDLE WHEN GET DESTROYED
+      Name: PUDDLE
+    - IconSprite: {fileID: 1635691964, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLETS FREEZE ENEMIES
+      Name: ICE
+    - IconSprite: {fileID: -2067211323, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLETS SET ENEMIES ON FIRE
+      Name: FIRE
+    - IconSprite: {fileID: 1211474802, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLETS EMIT LIGHTNING ON HIT
+      Name: LIGHTNING
+    - IconSprite: {fileID: -1323211920, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
+      Description: BULLETS HEAL YOU ON HIT
+      Name: VAMPIRISM

@@ -6,7 +6,7 @@ public class GameSettingsInstaller : ScriptableObjectInstaller<GameSettingsInsta
 {
     [SerializeField] private Prefabs _prefabs;
     [SerializeField] private GameSettings _gameSettings;
-    [SerializeField] private WeaponsSettings _weaponSettings;
+    [SerializeField] private WeaponsLevelsSettings _weaponSettings;
 
     public override void InstallBindings()
     {
