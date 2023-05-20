@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ProjectilePuddleSpawnLevelSystem : IEcsRunSystem
 {
-    private EcsFilter<ProjectileTag, ProjectileFinalDeathRequest, TransformComponent> _projectilesFilter;
+    private EcsFilter<ProjectileComponent, ProjectileFinalDeathRequest, TransformComponent> _projectilesFilter;
 
     private WeaponUpgradeLevels _weaponUpgrades = null;
     private Prefabs _prefabs;

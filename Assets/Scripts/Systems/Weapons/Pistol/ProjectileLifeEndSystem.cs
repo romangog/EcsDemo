@@ -3,8 +3,8 @@ using Leopotam.Ecs;
 
 public class ProjectileLifeEndSystem : IEcsRunSystem
 {
-    private EcsFilter<ProjectileTag, MoveForwardComponent, PathLengthAccumulativeComponent> _projectilesLifeFilter;
-    private EcsFilter<ProjectileTag, MoveForwardComponent, PathLengthAccumulativeComponent, ProjectileFragmentTag> _fragmentsLifeFilter;
+    private EcsFilter<ProjectileComponent, MoveForwardComponent, PathLengthAccumulativeComponent> _projectilesLifeFilter;
+    private EcsFilter<ProjectileComponent, MoveForwardComponent, PathLengthAccumulativeComponent, ProjectileFragmentTag> _fragmentsLifeFilter;
 
     private GameSettings _gameSettings = null;
     public void Run()

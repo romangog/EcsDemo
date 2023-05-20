@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using Leopotam.Ecs.Ui.Systems;
 using UnityEngine;
 using Voody.UniLeo;
 using Zenject;
@@ -13,6 +14,9 @@ public class EcsStartup : MonoBehaviour
     private WeaponUpgradeLevels _weaponUpgradeLevels;
     private LevelData _levelData;
     private BulletSpawner _bulletSpawner;
+    private IObjectPool<Projectile> _projectilePool;
+    private IObjectPool<Gem> _gemsPool;
+    private EcsUiEmitter _uiEmitter;
 
     [Inject]
     private void Construct(
@@ -21,7 +25,10 @@ public class EcsStartup : MonoBehaviour
         EcsWorld world,
         WeaponUpgradeLevels weaponUpgradeLevels,
         BulletSpawner bulletSpawner,
-        LevelData levelData)
+        LevelData levelData,
+        IObjectPool<Projectile> projectilePool,
+        IObjectPool<Gem> gemsPool,
+        EcsUiEmitter uiEmitter)
     {
         _prefabs = prefabs;
         _gameSettings = gameSettings;
@@ -29,7 +36,9 @@ public class EcsStartup : MonoBehaviour
         _weaponUpgradeLevels = weaponUpgradeLevels;
         _bulletSpawner = bulletSpawner;
         _levelData = levelData;
-
+        _projectilePool = projectilePool;
+        _gemsPool = gemsPool;
+        _uiEmitter = uiEmitter;
         Initialize();
     }
 
@@ -40,9 +49,7 @@ public class EcsStartup : MonoBehaviour
         //ref var pistolShotMoveForward = ref entity.Get<MoveForwardComponent>();
         //pistolShotMoveForward.Direction = buleltSpawnMoveForward.Direction;
         //pistolShot.transform.rotation = Quaternion.LookRotation(Vector3.forward, pistolShotMoveForward.Direction);
-
         AnimationsIDs.Initialize();
-
         _fixedSystems = new EcsSystems(_world)
             .Add(new MoveInOneDirectionSystem())
             .Add(new PuddleMainEffectSystem())
@@ -50,6 +57,7 @@ public class EcsStartup : MonoBehaviour
                 .Add(new PuddleIceEffectSystem())
                 .Add(new PuddleLightningEffectSystem())
             .Add(new PlayerInputMovementSystem())
+            .Add(new PlayerCentricMovementSystem())
             .Add(new PlayerCentricMovementSystem())
             .Add(new LightningFxPositionsSystem())
             .Inject(_gameSettings)
@@ -77,9 +85,25 @@ public class EcsStartup : MonoBehaviour
             .Add(new EnemyGetLightningHittedSystem())
             .OneFrame<GetHitByLightningRequest>()
 
+            .Add(new GemCollectionSystem())
+            .Add(new GemCollectedAccountSystem())
             .Add(new EnemyThrowbackSystem())
             .Add(new WeaponFireControlSystem())
             .Add(new FireClosestEnemiesSystem())
+
+            // Player Xp
+            .Add(new PlayerXpSystem())
+            .Add(new PlayerXpLevelUpSystem())
+            // Player Xp : UI
+            .Add(new PlayerLevelLabelSystem())
+            .Add(new PlayerLevelProgressBarSystem())
+            .Add(new PlayerLevelUpShowUpgradeScreenSystem())
+            .Add(new UpgradeChooseClickedSystem())
+                .OneFrame<ChangeXpRequest>()
+                .OneFrame<ReachedNextLevelRequest>()
+
+
+            .Add(new LerpMovementSystem())
 
             .Add(new EnemyOnFireSystem())
             .Add(new EnemyOnIceSystem())
@@ -104,8 +128,10 @@ public class EcsStartup : MonoBehaviour
 
             .Add(new EnemyHealthSystem())
             .Add(new EnemyDeathSystem())
+                .Add(new SpawnGemsSystem())
             .Add(new ChildEntitiesDestroySystem())
             .Add(new HealthbarSystem())
+
 
             // Projectile Movement Upgrade Adjustment
             .Add(new ProjectileAutoAimLevelSystem())
@@ -126,12 +152,12 @@ public class EcsStartup : MonoBehaviour
             .Add(new ProjectilePuddleSpawnLevelSystem())
                 .Add(new PuddleSpawnElementalEffects())
 
-
-
             .Add(new SetColorSystem())
             .OneFrame<SetBaseColorRequest>()
             .Add(new KillExplosionEntitySystem())
-            .Add(new ProjectilesDeathSystem())
+            //.Add(new ProjectilesDestroyDeathSystem())
+            .Add(new ProjectilesPoolDeathSystem())
+            .Add(new UiEventsClearSystem())
             .OneFrame<DeathRequest>()
             .OneFrame<LightningSpawnRequest>()
             .OneFrame<OnSpawnRequest>()
@@ -145,6 +171,9 @@ public class EcsStartup : MonoBehaviour
             .Inject(_weaponUpgradeLevels)
             .Inject(_bulletSpawner)
             .Inject(_levelData)
+            .Inject(_projectilePool)
+            .Inject(_gemsPool)
+            .InjectUi(_uiEmitter)
             .ConvertScene();
 
 
@@ -180,74 +209,74 @@ public class EcsStartup : MonoBehaviour
             Vector2 size = new Vector2(100, 20);
             if (GUI.Button(new Rect(pos, size), "Speed " + _weaponUpgradeLevels.SpeedLevel.ToString()))
             {
-                _weaponUpgradeLevels.SpeedLevel++;
+                _weaponUpgradeLevels.SpeedLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Damage " + _weaponUpgradeLevels.DamageLevel.ToString()))
             {
-                _weaponUpgradeLevels.DamageLevel++;
+                _weaponUpgradeLevels.DamageLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "FireRate " + _weaponUpgradeLevels.FireRateLevel.ToString()))
             {
-                _weaponUpgradeLevels.FireRateLevel++;
+                _weaponUpgradeLevels.FireRateLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Size " + _weaponUpgradeLevels.ProjectileSizeLevel.ToString()))
             {
-                _weaponUpgradeLevels.ProjectileSizeLevel++;
+                _weaponUpgradeLevels.ProjectileSizeLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Penetration " + _weaponUpgradeLevels.PenetrationLevel.ToString()))
             {
-                _weaponUpgradeLevels.PenetrationLevel++;
+                _weaponUpgradeLevels.PenetrationLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Spread " + _weaponUpgradeLevels.SpreadLevel.ToString()))
             {
-                _weaponUpgradeLevels.SpreadLevel++;
+                _weaponUpgradeLevels.SpreadLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Multiplier " + _weaponUpgradeLevels.ProjectileMultiplierLevel.ToString()))
             {
-                _weaponUpgradeLevels.ProjectileMultiplierLevel++;
+                _weaponUpgradeLevels.ProjectileMultiplierLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Fragmentation " + _weaponUpgradeLevels.FragmentationLevel.ToString()))
             {
-                _weaponUpgradeLevels.FragmentationLevel++;
+                _weaponUpgradeLevels.FragmentationLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "AutoAim " + _weaponUpgradeLevels.AutoAimLevel.ToString()))
             {
-                _weaponUpgradeLevels.AutoAimLevel++;
+                _weaponUpgradeLevels.AutoAimLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Explosion " + _weaponUpgradeLevels.ExplosionLevel.ToString()))
             {
-                _weaponUpgradeLevels.ExplosionLevel++;
+                _weaponUpgradeLevels.ExplosionLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Puddle " + _weaponUpgradeLevels.PuddleLevel.ToString()))
             {
-                _weaponUpgradeLevels.PuddleLevel++;
+                _weaponUpgradeLevels.PuddleLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Fire " + _weaponUpgradeLevels.FireLevel.ToString()))
             {
-                _weaponUpgradeLevels.FireLevel++;
+                _weaponUpgradeLevels.FireLevel.Updgrade();
             }
             pos += Vector2.up * 20;
 
             if (GUI.Button(new Rect(pos, size), "Ice " + _weaponUpgradeLevels.IceLevel.ToString()))
             {
-                _weaponUpgradeLevels.IceLevel++;
+                _weaponUpgradeLevels.IceLevel.Updgrade();
             }
             pos += Vector2.up * 20;
 
             if (GUI.Button(new Rect(pos, size), "Lightning " + _weaponUpgradeLevels.LightningLevel.ToString()))
             {
-                _weaponUpgradeLevels.LightningLevel++;
+                _weaponUpgradeLevels.LightningLevel.Updgrade();
             }
             pos += Vector2.up * 20;
         }

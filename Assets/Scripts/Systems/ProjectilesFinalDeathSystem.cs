@@ -3,7 +3,7 @@
 public class ProjectilesFinalDeathSystem : IEcsRunSystem
 {
     private EcsFilter<DeathRequest, ProjectileFragmentTag> _dyingFragmentation;
-    private EcsFilter<DeathRequest, ProjectileTag> _dyingProjectiles;
+    private EcsFilter<DeathRequest, ProjectileComponent> _dyingProjectiles;
 
     private WeaponUpgradeLevels _weaponUpgrades;
 

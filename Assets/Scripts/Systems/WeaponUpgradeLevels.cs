@@ -1,31 +1,49 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class WeaponUpgradeLevels
 {
-    public int FireRateLevel = 0;
-    public int SpeedLevel = 0;
-    public int ProjectileMultiplierLevel = 0;
-    public int DamageLevel = 0;
-    public int ProjectileSizeLevel = 0;
-    public int AutoAimLevel = 0;
-    public int FragmentationLevel = 0;
-    public int PenetrationLevel = 0;
-    public int SpreadLevel = 0;
-    public int ExplosionLevel = 0;
-    public int PuddleLevel = 0;
-    public int IceLevel = 0;
-    public int FireLevel = 0;
+    public DamageLevel DamageLevel = new DamageLevel();
+    public FireRateLevel FireRateLevel = new FireRateLevel();
+    public ProjectileSpeedLevel SpeedLevel = new ProjectileSpeedLevel();
+    public ProjectileMultiplierLevel ProjectileMultiplierLevel = new ProjectileMultiplierLevel();
+    public ProjectileSizeLevel ProjectileSizeLevel = new ProjectileSizeLevel();
+    public ProjectileAutoAimLevel AutoAimLevel = new ProjectileAutoAimLevel();
+    public ProjectileFragmentationLevel FragmentationLevel = new ProjectileFragmentationLevel();
+    public ProjectilePenetrationLevel PenetrationLevel = new ProjectilePenetrationLevel();
+    public ProjectileSpreadLevel SpreadLevel = new ProjectileSpreadLevel();
+    public ProjectileExplosionLevel ExplosionLevel = new ProjectileExplosionLevel();
+    public ProjectilePuddleLevel PuddleLevel = new ProjectilePuddleLevel();
+    public ProjectileIceLevel IceLevel = new ProjectileIceLevel();
+    public ProjectileFireLevel FireLevel = new ProjectileFireLevel();
+    public ProjectileLightningLevel LightningLevel = new ProjectileLightningLevel();
+    public ProjectileVampirismLevel VampirismLevel = new ProjectileVampirismLevel();
 
+    public List<WeaponLevel> WeaponLevels = new List<WeaponLevel>();
 
-    public int LightningLevel = 0;
-
-
-    public int VampireLevel = 0;
-
+    public WeaponUpgradeLevels()
+    {
+        WeaponLevels.Add(DamageLevel);
+        WeaponLevels.Add(FireRateLevel);
+        WeaponLevels.Add(SpeedLevel);
+        WeaponLevels.Add(ProjectileMultiplierLevel);
+        WeaponLevels.Add(ProjectileSizeLevel);
+        WeaponLevels.Add(AutoAimLevel);
+        WeaponLevels.Add(FragmentationLevel);
+        WeaponLevels.Add(PenetrationLevel);
+        WeaponLevels.Add(SpreadLevel);
+        WeaponLevels.Add(ExplosionLevel);
+        WeaponLevels.Add(PuddleLevel);
+        WeaponLevels.Add(IceLevel);
+        WeaponLevels.Add(FireLevel);
+        WeaponLevels.Add(LightningLevel);
+        WeaponLevels.Add(VampirismLevel);
+    }
     public float GetShootFrequencyFromLevel()
     {
-        return 1f / ((float)FireRateLevel + 1) * 2f;
+        return 1f / (FireRateLevel + 1) * 2f;
     }
 
     public float GetProjectileSpeedFromLevel()
@@ -52,9 +70,6 @@ public class WeaponUpgradeLevels
     {
         return UnityEngine.Random.Range(-90f, 90f) * (SpreadLevel / 30f);
     }
-
-
-
     internal int GetProjectileMultiplierFromLevel()
     {
         return ProjectileMultiplierLevel + 1;

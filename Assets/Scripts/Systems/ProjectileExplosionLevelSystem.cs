@@ -4,7 +4,7 @@ using UnityEngine;
 public class ProjectileExplosionLevelSystem : IEcsRunSystem
 {
     // Добавить компоненту авто-аима, убрать из системы проверку на аим
-    private EcsFilter<ProjectileTag, ProjectileFinalDeathRequest, TransformComponent> _projectileFilter;
+    private EcsFilter<ProjectileComponent, ProjectileFinalDeathRequest, TransformComponent> _projectileFilter;
     private EcsFilter<EnemyTag, TransformComponent>.Exclude<DeadTag> _enemiesFilter;
 
     private WeaponUpgradeLevels _weaponUpgrades = null;

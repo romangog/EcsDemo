@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: _GameSettings
   m_EditorClassIdentifier: 
   _prefabs:
-    PistolShotPrefab: {fileID: 7631708164722800484, guid: c8c380cd83a19c942ad5374d74896299, type: 3}
+    ProjectilePrefab: {fileID: 7631708164722800484, guid: c8c380cd83a19c942ad5374d74896299, type: 3}
     EnemyPrefab: {fileID: 6300990857189781359, guid: 0182022f160731a4bb1db84e4eca69bf, type: 3}
     ExplosionPrefab: {fileID: 8043768523475355796, guid: 48b497459ec068446a92e6f9db7a8f02, type: 3}
     PuddlePrefab: {fileID: 4176406069185652057, guid: 6e7f88fefa3cc794eb9ac7ab26ef6a01, type: 3}
     LigntningChainFx: {fileID: 5486010861333839740, guid: ef296b2cf73db20488b14730776fc089, type: 3}
+    GemPrefab: {fileID: 6754681316982912017, guid: 8e04ce32d6aa21e45807047d0b77e180, type: 3}
   _gameSettings:
     SpawnRectSize: {x: 12, y: 24}
     BulletsPathLengthMax: 40
@@ -25,6 +26,7 @@ MonoBehaviour:
     PlayerBaseMoveSpeed: 3
     EnemyBaseMoveSpeed: 2
     LightningReachRadius: 2
+    GemCollectionSpeed: 2
     IceColor: {r: 0, g: 0.9905019, b: 1, a: 1}
     BlackColor: {r: 0, g: 0, b: 0, a: 1}
     EnemyColliderLayerMask:

@@ -10,7 +10,14 @@ public class GameSettings
     public float PlayerBaseMoveSpeed;
     public float EnemyBaseMoveSpeed;
     public float LightningReachRadius;
+    public float GemCollectionSpeed;
     public Color IceColor;
     public Color BlackColor;
     public LayerMask EnemyColliderLayerMask;
+}
+
+[Serializable]
+public class WeaponsSettings
+{
+    public WeaponLevel.Settings[] AllSettings;
 }

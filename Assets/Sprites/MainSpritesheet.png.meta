@@ -1310,6 +1310,384 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Gem_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 970
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18484fb5d20a0ec4fb05be1be812801f
+      internalID: -1504610147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 970
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf7dc3081420e1468be39b671bc6e3c
+      internalID: -377469251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gem_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 970
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cff2ef1382e2e4781c27c54ba74818
+      internalID: -756713618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 920
+        width: 61
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d367090ca07b6c428b92cc6376c16e7
+      internalID: 425310666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Damage
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce9543fcfa762741b798405e972878d
+      internalID: 642229743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_FireRate
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28659bc31c537834c9145d2e2f5dabc4
+      internalID: -829989675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Speed
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf09ee3facc090649a77a78c96fdfaf2
+      internalID: 88329233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_AutoAim
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c814b4cb3fe2beb47b95e3e47158cc95
+      internalID: 906314515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Fragmentation
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 976
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcda8be5ee87e8d4ba1f0d185c8fc3bb
+      internalID: 1199973503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Penetration
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 960
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bcd6a2a8ebb27440a171bcd00406606
+      internalID: 965102098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Explosion
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 960
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0540a65f55aeba84caf2e3817b544639
+      internalID: 600241150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Size
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 960
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea19eacd5146d04ea95ba7fd598a2fc
+      internalID: 1652417292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Puddle
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 960
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e81f60c2c4fc843b9ec332424269e2
+      internalID: -2035707253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Spread
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 960
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a9baacbdcbbf546bd29f5746b8f857
+      internalID: -1444955919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Ice
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 944
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5214c9f7f8be54cbcc2843a29f364f
+      internalID: 1635691964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Fire
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 944
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc05b9bbf899f404b9fe1f5ce9c3c808
+      internalID: -2067211323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Lightning
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 944
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7744c81f350a71046be0226048f29948
+      internalID: 1211474802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeIcon_Vampirism
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 944
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00523b1f5b0995040960cac3d590347a
+      internalID: -1323211920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1322,19 +1700,27 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       DoodleMonster_LeftBody: -399529012
+      UpgradeIcon_Fire: -2067211323
       WeakPlatofrmPart_0: 7165362317656098137
       MainSpritesheet_5: 805075276
       DoodleMonster_idle0: -1451485401
       MainSprite_LeftArm: -1721614106895654116
       Puddle_idle0: 976462691
+      UpgradeIcon_Fragmentation: 1199973503
       Puddle_spawn2: -1812199528
       FinishPlatformPattern: -4354661749709651901
       DoodleMonster_RightLeg: -708580035
+      UpgradeIcon_AutoAim: 906314515
       Explosion_4: 1329202390
+      UpgradeIcon_Ice: 1635691964
       DoodleMonster_die2: -873980026
       MainSprite_Head: 1927544656186411968
+      Gem_1: -377469251
       Explosion_2: 1724237158
+      MainSpritesheet_1: 425310666
+      UpgradeIcon_Explosion: 600241150
       WeakPlatofrmPart_11: 9220185712161070121
+      UpgradeIcon_Puddle: -2035707253
       DefaultTile: -786531358
       PlatformMask: -743660659168677957
       DoodleMonster_die1: 667091234
@@ -1342,6 +1728,7 @@ TextureImporter:
       Puddle_idle1: -250768528
       Puddle_idle4: 1349605872
       WeakPlatform: 2202548682660783183
+      UpgradeIcon_Lightning: 1211474802
       WeakPlatofrmPart_1: -869806318593493254
       WeakPlatofrmPart_4: 4912935602268301503
       Puddle_spawn5: 778189844
@@ -1360,12 +1747,14 @@ TextureImporter:
       MainSpritesheet_6: 883138623
       DoodleMonster_RightArm: 1372631616
       Puddle_spawn0: 1124025926
+      UpgradeIcon_Vampirism: -1323211920
       WeakPlatofrmPart_3: 3533210348745159635
       CheckpointFlag_1: 420809369429108924
       DoodleMonster_LeftArm: -115054959
       MainSpritesheet_4: -115054959
       Puddle_spawn4: 1702279932
       Explosion_1: 542172938
+      UpgradeIcon_Speed: 88329233
       DoodleMonster_die3: 928704640
       DoodlePlayer: -2962274285517505976
       CheckpointFlag_2: 7498546773331249786
@@ -1377,13 +1766,20 @@ TextureImporter:
       DoodleMonster_idle1: 499482740
       WeakPlatofrmPart_6: -23278179230069286
       MainSpritesheet_7: -1107889472
+      Gem_2: -756713618
       Explosion_0: 1041471578
+      Gem_0: -1504610147
+      UpgradeIcon_Damage: -1961119823
       WeakPlatofrmPart_9: 7009047352155469417
       MainSprite_RightLeg: -5866300073982049482
       Puddle_spawn6: 358365338
       DoodleMonser_Head: -202706438
       DoodleMonster_LeftLeg: -309369723
+      UpgradeIcon_Size: 1652417292
+      UpgradeIcon_Penetration: 965102098
+      UpgradeIcon_Spread: -1444955919
       Puddle_spawn3: -1101403851
+      UpgradeIcon_FireRate: -829989675
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -8,23 +8,26 @@ public class BulletSpawner
     private readonly Prefabs _prefabs;
     private readonly WeaponUpgradeLevels _weaponUpgradeLevels;
     private readonly GameSettings _gameSettings;
+    private readonly IObjectPool<Projectile> _projectilesPool;
     public BulletSpawner(
         EcsWorld ecsWorld, 
         Prefabs prefabs,
         WeaponUpgradeLevels weaponUpgradeLevels,
-        GameSettings gameSettings)
+        GameSettings gameSettings,
+        IObjectPool<Projectile> projectilesPool)
     {
         _world = ecsWorld;
         _prefabs = prefabs;
         _weaponUpgradeLevels = weaponUpgradeLevels;
         _gameSettings = gameSettings;
+        _projectilesPool = projectilesPool;
     }
 
     public EcsEntity SpawnBullet(Vector2 pos, Vector2 dir, EcsEntity ignoreEntity)
     {
         var entity = _world.NewEntity();
 
-        Projectile projectile = GameObject.Instantiate(_prefabs.PistolShotPrefab);
+        Projectile projectile = _projectilesPool.Get(); // GameObject.Instantiate(_prefabs.ProjectilePrefab);
         projectile.ProjectileHitbox.HitEnityRecievedEvent += (hitEntityRef) => OnHitEntityRecieved(hitEntityRef, ref entity);
 
         entity.Get<RigidbodyComponent>().Rigidbody = projectile.Rigidbody;
@@ -35,7 +38,7 @@ public class BulletSpawner
 
         projectile.transform.position = pos;
 
-        entity.Get<ProjectileTag>();
+        entity.Get<ProjectileComponent>().Projectile = projectile;
         entity.Get<PathLengthAccumulativeComponent>();
         entity.Get<ProjectileShotRequest>();
         entity.Get<IgnoreEnemyComponent>();

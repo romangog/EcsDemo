@@ -5,6 +5,8 @@ public class EnemyDeathSystem : IEcsRunSystem
 {
     public EcsFilter<EnemyTag, DeathRequest, AnimatorComponent, EnemyHitboxComponent> _enemyDeathFilter;
 
+    private EcsWorld _world;
+
     public void Run()
     {
         foreach (var i in _enemyDeathFilter)

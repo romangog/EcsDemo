@@ -2,7 +2,7 @@
 
 public class FragmentationSpawnSystem : IEcsRunSystem
 {
-    private EcsFilter<HitRegisterRequest, TransformComponent, MoveForwardComponent, ProjectileTag, DeathRequest>
+    private EcsFilter<HitRegisterRequest, TransformComponent, MoveForwardComponent, ProjectileComponent, DeathRequest>
         .Exclude<ProjectileFragmentTag> _dyingProjectiles;
 
     private WeaponUpgradeLevels _weaponUpgrades;

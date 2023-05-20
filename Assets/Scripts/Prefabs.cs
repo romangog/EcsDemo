@@ -4,10 +4,11 @@ using UnityEngine;
 [Serializable]
 public class Prefabs
 {
-    public Projectile PistolShotPrefab;
+    public Projectile ProjectilePrefab;
     public GameObject EnemyPrefab;
     public Explosion ExplosionPrefab;
     public Puddle PuddlePrefab;
     public LightningFX LigntningChainFx;
+    public Gem GemPrefab;
 }
 
