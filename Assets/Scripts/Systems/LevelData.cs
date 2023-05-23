@@ -4,6 +4,7 @@ using UnityEngine;
 public class LevelData
 {
     public int EnemyLevel;
+    public float EnemiesPerSecond;
 
     //internal void ChangeXp(int v)
     //{

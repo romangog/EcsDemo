@@ -7,9 +7,7 @@ using System;
 public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
 {
     private Prefabs _prefabs;
-    private WeaponUpgradeLevels _weaponUpgrades;
     private LevelData _levelData;
-    private GameSettings _gameSettings;
 
     private float _spawnTimer;
     private float _spawnTimerMax;
@@ -20,11 +18,14 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
 
     public void Init()
     {
-        _spawnTimerMax = _spawnTimer = 5f;
+        _levelData.EnemiesPerSecond = 0.2f;
+        _spawnTimerMax = _spawnTimer = 1f / _levelData.EnemiesPerSecond;
+
     }
 
     public void Run()
     {
+        _levelData.EnemiesPerSecond += Time.deltaTime * 0.006f;
         _spawnTimer = Mathf.MoveTowards(_spawnTimer, 0f, Time.deltaTime);
 
         if (_spawnTimer == 0f)
@@ -37,8 +38,7 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
             ref var playerTransform = ref _playerTransformFilter.Get2(0);
             ref var mainCamera = ref _mainCameraFilter.Get2(0);
 
-
-            _spawnTimerMax = Mathf.Lerp(5f, 0.1f, _levelData.EnemyLevel / 30f);
+            _spawnTimerMax = 1f / _levelData.EnemiesPerSecond;
             //_spawnTimerMax = Mathf.Max(0.1f, _spawnTimerMax * 0.975f);
             _spawnTimer = _spawnTimerMax;
 

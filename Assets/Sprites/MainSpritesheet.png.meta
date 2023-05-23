@@ -1697,7 +1697,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1705,6 +1705,111 @@ TextureImporter:
       bones: []
       spriteID: cfc5a39ea672e1642a6a81b9b1d0947c
       internalID: -1951666873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodlePlayer_Death0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b81d4e84fb99049ab251591dcfc900
+      internalID: 1575933688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodlePlayer_Death1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec7eda3a686acb43a4d093407e9b5ae
+      internalID: -2076385142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodlePlayer_Death2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f5438f568193e4191b4eeb5a22794a
+      internalID: -1378060377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodlePlayer_Death3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b46bc698b1a6864a911c9263e489832
+      internalID: -1958642071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoodlePlayer_Death4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1008
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d551d6946ab79469ee695382365efb
+      internalID: -650997202
       vertices: []
       indices: 
       edges: []
@@ -1720,15 +1825,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      DoodlePlayer_Death0: 1575933688
       DoodleMonster_LeftBody: -399529012
       UpgradeIcon_Fire: -2067211323
       WeakPlatofrmPart_0: 7165362317656098137
-      MainSpritesheet_5: 805075276
+      Puddle_idle0: 976462691
       DoodleMonster_idle0: -1451485401
       MainSprite_LeftArm: -1721614106895654116
-      Puddle_idle0: 976462691
+      DoodlePlayer_Death2: -1378060377
       UpgradeIcon_Fragmentation: 1199973503
       Puddle_spawn2: -1812199528
+      DoodlePlayer_Death4: 805075276
       FinishPlatformPattern: -4354661749709651901
       DoodleMonster_RightLeg: -708580035
       UpgradeIcon_AutoAim: 906314515
@@ -1771,12 +1878,12 @@ TextureImporter:
       Puddle_spawn0: 1124025926
       UpgradeIcon_Vampirism: -1323211920
       WeakPlatofrmPart_3: 3533210348745159635
+      DoodlePlayer_Death1: -2076385142
       CheckpointFlag_1: 420809369429108924
       DoodleMonster_LeftArm: -115054959
-      MainSpritesheet_4: -115054959
+      UpgradeIcon_Speed: 88329233
       Puddle_spawn4: 1702279932
       Explosion_1: 542172938
-      UpgradeIcon_Speed: 88329233
       DoodleMonster_die3: 928704640
       DoodlePlayer: -2962274285517505976
       CheckpointFlag_2: 7498546773331249786
@@ -1800,6 +1907,7 @@ TextureImporter:
       UpgradeIcon_Size: 1652417292
       UpgradeIcon_Penetration: 965102098
       UpgradeIcon_Spread: -1444955919
+      DoodlePlayer_Death3: -115054959
       Puddle_spawn3: -1101403851
       UpgradeIcon_FireRate: -829989675
   spritePackingTag: 

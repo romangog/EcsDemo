@@ -7,3 +7,8 @@ public struct TimerComponent
 {
     public Timer Timer;
 }
+
+public struct PlayerDeathExitTimer
+{
+    public Timer Timer;
+}

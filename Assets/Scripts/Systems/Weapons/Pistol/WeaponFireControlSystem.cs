@@ -9,12 +9,13 @@ public class WeaponFireControlSystem : IEcsRunSystem
 
     EcsFilter<WeaponFiringStatusComponent, PistolTag> _pistolFiringFilter;
     EcsFilter<EnemyTag, RigidbodyComponent>.Exclude<DeadTag> _enemiesRigidbodies;
-    EcsFilter<PlayerTag, RigidbodyComponent> _playerRigidbodyFilter;
+    EcsFilter<PlayerTag, RigidbodyComponent>.Exclude<DeadTag> _playerRigidbodyFilter;
 
     private WeaponUpgradeLevels _upgradeLevels = null;
 
     public void Run()
     {
+        if (_playerRigidbodyFilter.GetEntitiesCount() == 0) return;
         Vector2 playerPos = _playerRigidbodyFilter.Get2(0).Rigidbody.position;
         ref var playerEntity =ref _playerRigidbodyFilter.GetEntity(0);
         Vector2 closestPos = Vector2.zero;
@@ -42,12 +43,13 @@ public class WeaponFireControlSystem : IEcsRunSystem
             if (areEnemiesAround
                 && pistolFiringStatus.CurrentReload == 0f)
             {
-                var spawnBulletRequest = _world.NewEntity();
+                var spawnBulletRequestEntity = _world.NewEntity();
 
                 pistolFiringStatus.CurrentReload = _upgradeLevels.GetShootFrequencyFromLevel();
-
-                spawnBulletRequest.Get<SpawnBulletsRequest>().BulletSpawnPos = playerPos;
-                spawnBulletRequest.Get<SpawnBulletsRequest>().BulletSpawnDirection = (closestPos - playerPos).normalized;
+                ref var spawnBulletsRequest = ref spawnBulletRequestEntity.Get<SpawnBulletsRequest>();
+                spawnBulletsRequest.BulletSpawnPos = playerPos;
+                spawnBulletsRequest.BulletSpawnDirection = (closestPos - playerPos).normalized;
+                spawnBulletsRequest.ShooterEntity = playerEntity;
 
             }
         }

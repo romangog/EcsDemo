@@ -23,7 +23,7 @@ public class BulletSpawner
         _projectilesPool = projectilesPool;
     }
 
-    public EcsEntity SpawnBullet(Vector2 pos, Vector2 dir, EcsEntity ignoreEntity)
+    public EcsEntity SpawnBullet(Vector2 pos, Vector2 dir, EcsEntity ignoreEntity, EcsEntity shooter)
     {
         var entity = _world.NewEntity();
 
@@ -42,6 +42,8 @@ public class BulletSpawner
         entity.Get<PathLengthAccumulativeComponent>();
         entity.Get<ProjectileShotRequest>();
         entity.Get<IgnoreEnemyComponent>();
+        entity.Get<ProjectileVampirismComponent>();
+        entity.Get<ShooterComponent>().ShooterEntity = shooter;
         entity.Get<ProjectilePenetrationComponent>();
         entity.Get<ElementalParticlesComponent>() = projectile.ElementalParticles;
         entity.Get<SpriteRendererComponent>() = projectile.SpriteRenderer;
@@ -52,6 +54,7 @@ public class BulletSpawner
 
     private void OnHitEntityRecieved(EntityReference hitEntityRef, ref EcsEntity pistolShotEntity)
     {
-        pistolShotEntity.Get<HitRegisterRequest>().HitTarget = hitEntityRef.Entity;
+        ref var hitRegister = ref pistolShotEntity.Get<HitRegisterRequest>();
+        hitRegister.HitTarget = hitEntityRef.Entity;
     }
 }

@@ -8,4 +8,10 @@ public struct HealthComponent
 {
     public float CurrentHealth;
     public float MaxHealth;
+
+    public void Reinitialize()
+    {
+        CurrentHealth = 100;
+        MaxHealth = 100;
+    }
 }

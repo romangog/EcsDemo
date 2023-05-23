@@ -12,15 +12,28 @@ public class BulletSpawnSystem : IEcsRunSystem
         foreach (var i in _spawnBulletsFilter)
         {
             ref var bulletSpawnRequest = ref _spawnBulletsFilter.Get1(i);
-            int count = (bulletSpawnRequest.IsFragmentation)? _weaponUpgrade.GetProjectileFragmentationFromLevel() : _weaponUpgrade.GetProjectileMultiplierFromLevel();
+            ref var bulletSpawnRequestEntity = ref _spawnBulletsFilter.GetEntity(i);
+            int count = (bulletSpawnRequest.IsFragmentation) ? _weaponUpgrade.GetProjectileFragmentationFromLevel() : _weaponUpgrade.GetProjectileMultiplierFromLevel();
             for (int j = 0; j < count; j++)
             {
-                var bulletEntity = _bulletSpawner.SpawnBullet(bulletSpawnRequest.BulletSpawnPos, bulletSpawnRequest.BulletSpawnDirection, bulletSpawnRequest.IgnoreEntity);
+                var bulletEntity = _bulletSpawner.SpawnBullet(
+                    bulletSpawnRequest.BulletSpawnPos,
+                    bulletSpawnRequest.BulletSpawnDirection,
+                    bulletSpawnRequest.IgnoreEntity,
+                    bulletSpawnRequest.ShooterEntity);
 
                 if (bulletSpawnRequest.IsFragmentation)
                 {
                     bulletEntity.Get<ProjectileFragmentTag>();
+
+                    ref var vampirism = ref bulletSpawnRequestEntity.Get<ProjectileVampirismComponent>();
+                    if (!vampirism.VampirismTimer.IsOver)
+                    {
+                        bulletEntity.Get<ProjectileVampirismComponent>().VampirismTimer.Set(vampirism.VampirismTimer.TimeLeft);
+                    }
+
                 }
+
             }
         }
     }

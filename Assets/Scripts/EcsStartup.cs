@@ -6,6 +6,7 @@ using Zenject;
 
 public class EcsStartup : MonoBehaviour
 {
+    [SerializeField] private bool _showDebugMenu;
     private Prefabs _prefabs;
     private GameSettings _gameSettings;
     private EcsWorld _world;
@@ -65,9 +66,10 @@ public class EcsStartup : MonoBehaviour
 
         _updateSystems = new EcsSystems(_world)
             .Add(new InitializeEntityReferencesSystem())
-
             // Projectie OnHit
             .Add(new EnemyHitRegistrationSystem())
+                .Add(new ProjectileHitPenetrationSystem())
+                .Add(new ProjectileHitVampirismSystem())
                 .Add(new FragmentationSpawnSystem())
                 .Add(new EnemyFireHitSystem())
                 .Add(new EnemyIceHitSystem())
@@ -75,6 +77,7 @@ public class EcsStartup : MonoBehaviour
                 .OneFrame<HitByProjectileRequest>()
 
             .Add(new ProjectilesFinalDeathSystem())
+            .Add(new ProjectilesVampirismFinalDeathSystem())
             .Add(new GiveGameObjectNameSystem())
                 .OneFrame<GiveGameObjectNameRequest>()
 
@@ -118,9 +121,12 @@ public class EcsStartup : MonoBehaviour
             .Add(new ProjectilePenetrationLevelSystem())
             .Add(new ProjectileSetOnFireSystem())
             .Add(new ProjectileSetOnIceSystem())
+            .Add(new ProjectileSetVampirismSystem())
 
             .Add(new PlayerInvulSystem())
             .Add(new PlayerHealthSystem())
+            .Add(new PlayerDeathSystem())
+            .Add(new PlayerDeathScreenShowSystem())
             .Add(new EnemyHitImpactSystem())
             .Add(new EnemyHitHighlightSystem())
 
@@ -142,6 +148,7 @@ public class EcsStartup : MonoBehaviour
 
             .Add(new LightningFxSpawnSystem())
 
+            .Add(new ProjectileVampirismTimerSystem())
             .Add(new ProjectileLifeEndSystem())
             .Add(new PuddleLifeEndSystem())
             .Add(new LightningLifeSystem())
@@ -155,8 +162,8 @@ public class EcsStartup : MonoBehaviour
             .Add(new SetColorSystem())
             .OneFrame<SetBaseColorRequest>()
             .Add(new KillExplosionEntitySystem())
-            //.Add(new ProjectilesDestroyDeathSystem())
             .Add(new ProjectilesPoolDeathSystem())
+            .Add(new RestartGameSystem())
             .Add(new UiEventsClearSystem())
             .OneFrame<DeathRequest>()
             .OneFrame<LightningSpawnRequest>()
@@ -197,9 +204,10 @@ public class EcsStartup : MonoBehaviour
         _fixedSystems.Destroy();
         _world.Destroy();
     }
-
+#if UNITY_EDITOR
     private void OnGUI()
     {
+        if (!_showDebugMenu) return;
         LeftUppperBlock();
         RightUpperBlock();
 
@@ -230,11 +238,6 @@ public class EcsStartup : MonoBehaviour
             if (GUI.Button(new Rect(pos, size), "Penetration " + _weaponUpgradeLevels.PenetrationLevel.ToString()))
             {
                 _weaponUpgradeLevels.PenetrationLevel.Updgrade();
-            }
-            pos += Vector2.up * 20;
-            if (GUI.Button(new Rect(pos, size), "Spread " + _weaponUpgradeLevels.SpreadLevel.ToString()))
-            {
-                _weaponUpgradeLevels.SpreadLevel.Updgrade();
             }
             pos += Vector2.up * 20;
             if (GUI.Button(new Rect(pos, size), "Multiplier " + _weaponUpgradeLevels.ProjectileMultiplierLevel.ToString()))
@@ -279,6 +282,12 @@ public class EcsStartup : MonoBehaviour
                 _weaponUpgradeLevels.LightningLevel.Updgrade();
             }
             pos += Vector2.up * 20;
+
+            if (GUI.Button(new Rect(pos, size), "Vampirism " + _weaponUpgradeLevels.VampirismLevel.ToString()))
+            {
+                _weaponUpgradeLevels.VampirismLevel.Updgrade();
+            }
+            pos += Vector2.up * 20;
         }
 
         void RightUpperBlock()
@@ -293,4 +302,5 @@ public class EcsStartup : MonoBehaviour
         }
 
     }
+#endif
 }

@@ -27,6 +27,7 @@ MonoBehaviour:
     EnemyBaseMoveSpeed: 2
     LightningReachRadius: 2
     GemCollectionSpeed: 2
+    VampirismTimer: 0.5
     IceColor: {r: 0, g: 0.9905019, b: 1, a: 1}
     BlackColor: {r: 0, g: 0, b: 0, a: 1}
     EnemyColliderLayerMask:
@@ -58,9 +59,6 @@ MonoBehaviour:
     - IconSprite: {fileID: 965102098, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
       Description: BULLET PENTRATES MORE ENEMIES BEFORE DESTROYING
       Name: PENETRATION
-    - IconSprite: {fileID: -1444955919, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
-      Description: LESS AIM, MORE HITS
-      Name: SPREAD
     - IconSprite: {fileID: 600241150, guid: cd20138c3d25c084da4d3c18b86b77c9, type: 3}
       Description: BULLETS EXPLODE WHEN GET DESTROYED
       Name: EXPLOSION

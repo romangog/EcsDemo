@@ -5,7 +5,7 @@ using Leopotam.Ecs;
 
 public class PlayerInputMovementSystem : IEcsRunSystem
 {
-    EcsFilter<PlayerTag, RigidbodyComponent> _playerRigidbodiesFilter;
+    EcsFilter<PlayerTag, RigidbodyComponent>.Exclude<DeadTag> _playerRigidbodiesFilter;
 
     private GameSettings _gameSetting;
 

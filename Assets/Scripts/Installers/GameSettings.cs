@@ -11,6 +11,7 @@ public class GameSettings
     public float EnemyBaseMoveSpeed;
     public float LightningReachRadius;
     public float GemCollectionSpeed;
+    public float VampirismTimer;
     public Color IceColor;
     public Color BlackColor;
     public LayerMask EnemyColliderLayerMask;

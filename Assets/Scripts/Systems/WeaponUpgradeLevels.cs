@@ -14,13 +14,13 @@ public class WeaponUpgradeLevels
     private const int AIM_LEVEL_INDEX = 5;
     private const int FRAGMENTATION_LEVEL_INDEX = 6;
     private const int PENETRATION_LEVEL_INDEX = 7;
-    private const int SPREAD_LEVEL_INDEX = 8;
-    private const int EXPLOSION_LEVEL_INDEX = 9;
-    private const int PUDDLE_LEVEL_INDEX = 10;
-    private const int ICE_LEVEL_INDEX = 11;
-    private const int FIRE_LEVEL_INDEX = 12;
-    private const int LIGHTNING_LEVEL_INDEX = 13;
-    private const int VAMPIRISM_LEVEL_INDEX = 14;
+    private const int EXPLOSION_LEVEL_INDEX = 8;
+    private const int PUDDLE_LEVEL_INDEX = 9;
+    private const int ICE_LEVEL_INDEX = 10;
+    private const int FIRE_LEVEL_INDEX = 11;
+    private const int LIGHTNING_LEVEL_INDEX = 12;
+    private const int VAMPIRISM_LEVEL_INDEX = 13;
+    private readonly WeaponsLevelsSettings _weaponsSettings;
 
     public WeaponLevel DamageLevel => WeaponLevels[DAMAGE_LEVEL_INDEX];
     public WeaponLevel FireRateLevel => WeaponLevels[FIRERATE_LEVEL_INDEX];
@@ -30,7 +30,6 @@ public class WeaponUpgradeLevels
     public WeaponLevel AutoAimLevel => WeaponLevels[AIM_LEVEL_INDEX];
     public WeaponLevel FragmentationLevel => WeaponLevels[FRAGMENTATION_LEVEL_INDEX];
     public WeaponLevel PenetrationLevel => WeaponLevels[PENETRATION_LEVEL_INDEX];
-    public WeaponLevel SpreadLevel => WeaponLevels[SPREAD_LEVEL_INDEX];
     public WeaponLevel ExplosionLevel => WeaponLevels[EXPLOSION_LEVEL_INDEX];
     public WeaponLevel PuddleLevel => WeaponLevels[PUDDLE_LEVEL_INDEX];
     public WeaponLevel IceLevel => WeaponLevels[ICE_LEVEL_INDEX];
@@ -42,9 +41,11 @@ public class WeaponUpgradeLevels
 
     public WeaponUpgradeLevels(WeaponsLevelsSettings weaponsSettings)
     {
-        for (int i = 0; i < weaponsSettings.AllSettings.Length; i++)
+        _weaponsSettings = weaponsSettings;
+
+        for (int i = 0; i < _weaponsSettings.AllSettings.Length; i++)
         {
-            WeaponLevels.Add(new WeaponLevel(weaponsSettings.AllSettings[i]));
+            WeaponLevels.Add(new WeaponLevel(_weaponsSettings.AllSettings[i]));
         }
     }
     public float GetShootFrequencyFromLevel()
@@ -74,7 +75,7 @@ public class WeaponUpgradeLevels
 
     internal float GetProjectileSpreadFromLevel()
     {
-        return UnityEngine.Random.Range(-90f, 90f) * (SpreadLevel / 30f);
+        return UnityEngine.Random.Range(-90f, 90f) * (ProjectileMultiplierLevel / 6f);
     }
     internal int GetProjectileMultiplierFromLevel()
     {
@@ -99,6 +100,15 @@ public class WeaponUpgradeLevels
     internal float GetProjectileAutoAimViewAngleFromLevel()
     {
         return Mathf.LerpUnclamped(0, 90f, AutoAimLevel / 3f);
+    }
+
+    internal void Reinitialize()
+    {
+        WeaponLevels.Clear();
+        for (int i = 0; i < _weaponsSettings.AllSettings.Length; i++)
+        {
+            WeaponLevels.Add(new WeaponLevel(_weaponsSettings.AllSettings[i]));
+        }
     }
 
     internal float GetProjectileAutoAimRotateSpeedFromLevel()
@@ -161,6 +171,11 @@ public class WeaponUpgradeLevels
         return Mathf.LerpUnclamped(1f, 2f, IceLevel / 4f);
     }
 
+    internal float GetVampirismHealFromLevel()
+    {
+        return Mathf.Lerp(0, 50f, VampirismLevel / 5f);
+    }
+
     internal int GetLevelsSum()
     {
         return FireRateLevel
@@ -171,7 +186,6 @@ public class WeaponUpgradeLevels
             + AutoAimLevel
             + FragmentationLevel
             + PenetrationLevel
-            + SpreadLevel
             + ExplosionLevel
             + IceLevel
             + FireLevel;

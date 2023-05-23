@@ -6,6 +6,7 @@ public struct ElementalParticlesComponent
 {
     public ParticleSystem FireFx;
     public ParticleSystem LightningFx;
+    public TrailRenderer VampirismFx;
 }
 
 

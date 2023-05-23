@@ -15,6 +15,7 @@ public class GemCollectionSystem : IEcsRunSystem
             ref var collectedRequest = ref _gemsUnpickedFilter.Get2(i);
 
             entity.Get<CollectedComponent>().CollectedEntity = collectedRequest.CollectedEntity;
+            if (collectedRequest.CollectedEntity.Has<DeadTag>()) continue;
             ref var lerpMoving = ref entity.Get<LerpMovingComponent>();
             lerpMoving.CurrentT = 0f;
             lerpMoving.Speed = _gameSettings.GemCollectionSpeed;

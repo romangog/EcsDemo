@@ -7,4 +7,6 @@ public struct SpawnBulletsRequest
     public Vector2 BulletSpawnDirection;
     public bool IsFragmentation;
     public EcsEntity IgnoreEntity;
+    public EcsEntity ShooterEntity;
+    public EcsEntity EmitterProjectile;
 }
