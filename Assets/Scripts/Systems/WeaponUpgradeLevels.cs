@@ -89,7 +89,7 @@ public class WeaponUpgradeLevels
 
     internal int GetProjectileFragmentationFromLevel()
     {
-        return FragmentationLevel * 3;
+        return FragmentationLevel * 2;
     }
 
     internal int GetProjectileAutoAimLevel()

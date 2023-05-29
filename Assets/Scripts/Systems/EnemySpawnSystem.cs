@@ -30,7 +30,7 @@ public class EnemySpawnSystem : IEcsRunSystem, IEcsInitSystem
 
         if (_spawnTimer == 0f)
         {
-            if (_aliveEnemiesFilter.GetEntitiesCount() >= 100)
+            if (_aliveEnemiesFilter.GetEntitiesCount() >= _levelData.EnemiesPerSecond * 30f)
             {
                 return;
             }

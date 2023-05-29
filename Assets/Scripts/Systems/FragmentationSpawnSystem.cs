@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FragmentationSpawnSystem : IEcsRunSystem
 {
-    private EcsFilter<HitRegisterRequest, TransformComponent, MoveForwardComponent, ShooterComponent, ProjectileComponent, DeathRequest>
+    private EcsFilter<HitRegisterRequest, TransformComponent, MoveForwardComponent, ShooterComponent, ProjectileComponent>
         .Exclude<ProjectileFragmentTag> _dyingProjectiles;
 
     private WeaponUpgradeLevels _weaponUpgrades;

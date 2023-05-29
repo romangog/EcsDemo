@@ -45,7 +45,6 @@ public class EcsStartup : MonoBehaviour
 
     void Initialize()
     {
-
         //// Adjust SpreadComponent - TURN INTO SYSTEM
         //ref var pistolShotMoveForward = ref entity.Get<MoveForwardComponent>();
         //pistolShotMoveForward.Direction = buleltSpawnMoveForward.Direction;
@@ -66,20 +65,13 @@ public class EcsStartup : MonoBehaviour
 
         _updateSystems = new EcsSystems(_world)
             .Add(new InitializeEntityReferencesSystem())
-            // Projectie OnHit
-            .Add(new EnemyHitRegistrationSystem())
-                .Add(new ProjectileHitPenetrationSystem())
-                .Add(new ProjectileHitVampirismSystem())
-                .Add(new FragmentationSpawnSystem())
-                .Add(new EnemyFireHitSystem())
-                .Add(new EnemyIceHitSystem())
-                .Add(new LightningEmmisionSystem())
-                .OneFrame<HitByProjectileRequest>()
-
-            .Add(new ProjectilesFinalDeathSystem())
-            .Add(new ProjectilesVampirismFinalDeathSystem())
             .Add(new GiveGameObjectNameSystem())
                 .OneFrame<GiveGameObjectNameRequest>()
+            // Projectie OnHit
+            .Add(ProjectileHitEffectsSystem())
+
+            .Add(new ProjectilesDeathSystem())
+            .Add(new ProjectilesVampirismDeathSystem())
 
             .Add(new EnemyCatchFireSystem())
             .OneFrame<CatchFireRequest>()
@@ -104,8 +96,6 @@ public class EcsStartup : MonoBehaviour
             .Add(new UpgradeChooseClickedSystem())
                 .OneFrame<ChangeXpRequest>()
                 .OneFrame<ReachedNextLevelRequest>()
-
-
             .Add(new LerpMovementSystem())
 
             .Add(new EnemyOnFireSystem())
@@ -183,9 +173,21 @@ public class EcsStartup : MonoBehaviour
             .InjectUi(_uiEmitter)
             .ConvertScene();
 
-
         _updateSystems.Init();
         _fixedSystems.Init();
+
+        EcsSystems ProjectileHitEffectsSystem()
+        {
+            return new EcsSystems(_world)
+                .Add(new EnemyHitRegistrationSystem())
+                .Add(new ProjectileHitPenetrationSystem())
+                .Add(new ProjectileHitVampirismSystem())
+                .Add(new FragmentationSpawnSystem())
+                .Add(new EnemyFireHitSystem())
+                .Add(new EnemyIceHitSystem())
+                .Add(new LightningEmmisionSystem())
+                .OneFrame<HitByProjectileRequest>();
+        }
     }
 
     void Update()
